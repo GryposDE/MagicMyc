@@ -51,16 +51,58 @@ int main(void)
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
 
-    TRISB &= 0x7F; // pin7 is an
+    TRISB &= ~(1U << 7U); // pin7 is an
+    TRISB &= ~(1U << 6U); // pin6 is an
+    TRISB &= ~(1U << 5U); // pin6 is an
     WPUB = 0;
     ODCONB = 0; // push-pull
     
+    uint8_t bShow = 0;
+    uint32_t xxx = 0;
+    int8_t light = 0;
+    uint8_t counter = 0;
     while(1)
     {
-        PORTB |= (1U << 7U);
-        DELAY_milliseconds(1000);
-        PORTB &= ~(1U << 7U);
-        DELAY_milliseconds(1000);
+        if(counter < light)
+        {
+            PORTB |=  (1U << 7U);
+            PORTB |=  (1U << 5U);
+            PORTB &= ~(1U << 6U);
+        }
+        //DELAY_milliseconds(1000);
+        else
+        {
+            PORTB &= ~(1U << 7U);
+            PORTB &=  (1U << 5U);
+            PORTB |=  (1U << 6U);
+        }
+        //if(++light > 100)
+        //    light = 0;
+        
+        if(++counter > 10)
+        {
+            counter = 0;
+            if(++xxx > 0x2000)
+            {
+                xxx = 0;
+                if(bShow == 0)
+                {
+                    if(++light > 10)
+                    {
+                        bShow = 1;
+                    }
+                }
+                else
+                {
+                    if(--light <= 0)
+                    {
+                        bShow = 0;
+                    }
+                }                
+            }
+        }
+        
+        //DELAY_milliseconds(1000);
     }    
     
     return 0;

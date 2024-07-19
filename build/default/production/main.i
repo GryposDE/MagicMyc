@@ -23685,16 +23685,58 @@ int main(void)
 {
     SYSTEM_Initialize();
 # 54 "main.c"
-    TRISB &= 0x7F;
+    TRISB &= ~(1U << 7U);
+    TRISB &= ~(1U << 6U);
+    TRISB &= ~(1U << 5U);
     WPUB = 0;
     ODCONB = 0;
 
+    uint8_t bShow = 0;
+    uint32_t xxx = 0;
+    int8_t light = 0;
+    uint8_t counter = 0;
     while(1)
     {
-        PORTB |= (1U << 7U);
-        DELAY_milliseconds(1000);
-        PORTB &= ~(1U << 7U);
-        DELAY_milliseconds(1000);
+        if(counter < light)
+        {
+            PORTB |= (1U << 7U);
+            PORTB |= (1U << 5U);
+            PORTB &= ~(1U << 6U);
+        }
+
+        else
+        {
+            PORTB &= ~(1U << 7U);
+            PORTB &= (1U << 5U);
+            PORTB |= (1U << 6U);
+        }
+
+
+
+        if(++counter > 10)
+        {
+            counter = 0;
+            if(++xxx > 0x2000)
+            {
+                xxx = 0;
+                if(bShow == 0)
+                {
+                    if(++light > 10)
+                    {
+                        bShow = 1;
+                    }
+                }
+                else
+                {
+                    if(--light <= 0)
+                    {
+                        bShow = 0;
+                    }
+                }
+            }
+        }
+
+
     }
 
     return 0;

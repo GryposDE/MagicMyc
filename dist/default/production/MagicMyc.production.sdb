@@ -85,8 +85,6 @@
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "41 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"37 P:\Projekt\PIC\MagicMyc\mcc_generated_files/timer/src/delay.c
-[v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
 "4 S:\XC8C\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 S:\XC8C\pic\sources\c99\common\float.c
@@ -546,7 +544,15 @@
 "40 P:\Projekt\PIC\MagicMyc\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"67
+"61
+[v main@xxx xxx `ul  1 a 4 2 ]
+"62
+[v main@light light `c  1 a 1 8 ]
+"63
+[v main@counter counter `uc  1 a 1 7 ]
+"60
+[v main@bShow bShow `uc  1 a 1 6 ]
+"109
 } 0
 "41 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -641,10 +647,4 @@
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
 "58
-} 0
-"37 P:\Projekt\PIC\MagicMyc\mcc_generated_files/timer/src/delay.c
-[v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
-{
-[v DELAY_milliseconds@milliseconds milliseconds `us  1 p 2 0 ]
-"41
 } 0

@@ -15,9 +15,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38132
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 38132: extern volatile unsigned char PORTB __attribute__((address(0x4CF)));
 [v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
-"44 ./mcc_generated_files/timer/delay.h
-[; ;./mcc_generated_files/timer/delay.h: 44: void DELAY_milliseconds(uint16_t milliseconds);
-[v _DELAY_milliseconds `(v ~T0 @X0 0 ef1`us ]
 "269 S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 269: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2071,43 +2068,163 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 42:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
 "54
-[; ;main.c: 54:     TRISB &= 0x7F;
-[e =& _TRISB -> -> 127 `i `Vuc ]
+[; ;main.c: 54:     TRISB &= ~(1U << 7U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
 "55
-[; ;main.c: 55:     WPUB = 0;
-[e = _WPUB -> -> 0 `i `uc ]
+[; ;main.c: 55:     TRISB &= ~(1U << 6U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
 "56
-[; ;main.c: 56:     ODCONB = 0;
-[e = _ODCONB -> -> 0 `i `uc ]
+[; ;main.c: 56:     TRISB &= ~(1U << 5U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 5 `ui `Vuc ]
+"57
+[; ;main.c: 57:     WPUB = 0;
+[e = _WPUB -> -> 0 `i `uc ]
 "58
-[; ;main.c: 58:     while(1)
-[e :U 1915 ]
-"59
-[; ;main.c: 59:     {
-{
+[; ;main.c: 58:     ODCONB = 0;
+[e = _ODCONB -> -> 0 `i `uc ]
 "60
-[; ;main.c: 60:         PORTB |= (1U << 7U);
-[e =| _PORTB -> << -> 1 `ui -> 7 `ui `Vuc ]
+[; ;main.c: 60:     uint8_t bShow = 0;
+[v _bShow `uc ~T0 @X0 1 a ]
+[e = _bShow -> -> 0 `i `uc ]
 "61
-[; ;main.c: 61:         DELAY_milliseconds(1000);
-[e ( _DELAY_milliseconds (1 -> -> 1000 `i `us ]
+[; ;main.c: 61:     uint32_t xxx = 0;
+[v _xxx `ul ~T0 @X0 1 a ]
+[e = _xxx -> -> -> 0 `i `l `ul ]
 "62
-[; ;main.c: 62:         PORTB &= ~(1U << 7U);
-[e =& _PORTB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
+[; ;main.c: 62:     int8_t light = 0;
+[v _light `c ~T0 @X0 1 a ]
+[e = _light -> -> 0 `i `c ]
 "63
-[; ;main.c: 63:         DELAY_milliseconds(1000);
-[e ( _DELAY_milliseconds (1 -> -> 1000 `i `us ]
+[; ;main.c: 63:     uint8_t counter = 0;
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
 "64
-[; ;main.c: 64:     }
+[; ;main.c: 64:     while(1)
+[e :U 1915 ]
+"65
+[; ;main.c: 65:     {
+{
+"66
+[; ;main.c: 66:         if(counter < light)
+[e $ ! < -> _counter `i -> _light `i 1917  ]
+"67
+[; ;main.c: 67:         {
+{
+"68
+[; ;main.c: 68:             PORTB |= (1U << 7U);
+[e =| _PORTB -> << -> 1 `ui -> 7 `ui `Vuc ]
+"69
+[; ;main.c: 69:             PORTB |= (1U << 5U);
+[e =| _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
+"70
+[; ;main.c: 70:             PORTB &= ~(1U << 6U);
+[e =& _PORTB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
+"71
+[; ;main.c: 71:         }
+}
+[e $U 1918  ]
+"73
+[; ;main.c: 73:         else
+[e :U 1917 ]
+"74
+[; ;main.c: 74:         {
+{
+"75
+[; ;main.c: 75:             PORTB &= ~(1U << 7U);
+[e =& _PORTB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
+"76
+[; ;main.c: 76:             PORTB &= (1U << 5U);
+[e =& _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
+"77
+[; ;main.c: 77:             PORTB |= (1U << 6U);
+[e =| _PORTB -> << -> 1 `ui -> 6 `ui `Vuc ]
+"78
+[; ;main.c: 78:         }
+}
+[e :U 1918 ]
+"82
+[; ;main.c: 82:         if(++counter > 10)
+[e $ ! > -> =+ _counter -> -> 1 `i `uc `i -> 10 `i 1919  ]
+"83
+[; ;main.c: 83:         {
+{
+"84
+[; ;main.c: 84:             counter = 0;
+[e = _counter -> -> 0 `i `uc ]
+"85
+[; ;main.c: 85:             if(++xxx > 0x2000)
+[e $ ! > =+ _xxx -> -> -> 1 `i `l `ul -> -> -> 8192 `i `l `ul 1920  ]
+"86
+[; ;main.c: 86:             {
+{
+"87
+[; ;main.c: 87:                 xxx = 0;
+[e = _xxx -> -> -> 0 `i `l `ul ]
+"88
+[; ;main.c: 88:                 if(bShow == 0)
+[e $ ! == -> _bShow `i -> 0 `i 1921  ]
+"89
+[; ;main.c: 89:                 {
+{
+"90
+[; ;main.c: 90:                     if(++light > 10)
+[e $ ! > -> =+ _light -> -> 1 `i `c `i -> 10 `i 1922  ]
+"91
+[; ;main.c: 91:                     {
+{
+"92
+[; ;main.c: 92:                         bShow = 1;
+[e = _bShow -> -> 1 `i `uc ]
+"93
+[; ;main.c: 93:                     }
+}
+[e :U 1922 ]
+"94
+[; ;main.c: 94:                 }
+}
+[e $U 1923  ]
+"95
+[; ;main.c: 95:                 else
+[e :U 1921 ]
+"96
+[; ;main.c: 96:                 {
+{
+"97
+[; ;main.c: 97:                     if(--light <= 0)
+[e $ ! <= -> =- _light -> -> 1 `i `c `i -> 0 `i 1924  ]
+"98
+[; ;main.c: 98:                     {
+{
+"99
+[; ;main.c: 99:                         bShow = 0;
+[e = _bShow -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:                     }
+}
+[e :U 1924 ]
+"101
+[; ;main.c: 101:                 }
+}
+[e :U 1923 ]
+"102
+[; ;main.c: 102:             }
+}
+[e :U 1920 ]
+"103
+[; ;main.c: 103:         }
+}
+[e :U 1919 ]
+"106
+[; ;main.c: 106:     }
 }
 [e :U 1914 ]
 [e $U 1915  ]
 [e :U 1916 ]
-"66
-[; ;main.c: 66:     return 0;
+"108
+[; ;main.c: 108:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1913  ]
-"67
-[; ;main.c: 67: }
+"109
+[; ;main.c: 109: }
 [e :UE 1913 ]
 }
