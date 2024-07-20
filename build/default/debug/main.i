@@ -24027,11 +24027,29 @@ int8_t s8SPI_Master_TransmitReceiveData(sSPI_Handler_t* const psSPI_Handler, uin
 
 
 
+
+
+static void vRGB_GPIO_Init(void);
+
+static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin);
+static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin);
+
+
+static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset);
+
+
+
+
+
 int main(void)
 {
     SYSTEM_Initialize();
 
+    static uint8_t au8SinusWave[100];
+    vGenerateSinus((uint8_t*)au8SinusWave, 100, 2047, 2048);
     DAC1_Initialize();
+
+    vRGB_GPIO_Init();
 
     sSPI_Config const sConfig = {
         .eSPI_Mode = SPI_MODE_0,
@@ -24041,64 +24059,56 @@ int main(void)
     };
 
     s8SPI_Master_Init(((sSPI_Handler_t* const) (0x00000080)), &sConfig);
-# 72 "main.c"
-    TRISB &= ~(1U << 7U);
-    TRISB &= ~(1U << 6U);
-    TRISB &= ~(1U << 5U);
-    WPUB = 0;
-    ODCONB = 0;
+# 90 "main.c"
+    uint32_t u32CurrentSample = 0;
 
-    uint8_t bShow = 0;
-    uint32_t xxx = 0;
-    uint32_t yyy = 0;
-    int8_t light = 0;
-    uint32_t counter = 0;
+    uint8_t u8Light = 0;
+    uint8_t u8Direction = 0;
+    uint32_t u32CounterA = 0;
+    uint32_t u32CounterB = 0;
     while(1)
     {
 
-
-        if(counter < light)
+        if(u32CounterA < u8Light)
         {
-            PORTB |= (1U << 7U);
-            PORTB |= (1U << 5U);
-            PORTB &= ~(1U << 6U);
+            vGPIO_Set(&PORTB, 7U);
+            vGPIO_Reset(&PORTB, 6U);
         }
         else
         {
-            PORTB &= ~(1U << 7U);
-            PORTB &= (1U << 5U);
-            PORTB |= (1U << 6U);
+            vGPIO_Reset(&PORTB, 7U);
+            vGPIO_Set(&PORTB, 6U);
         }
 
-        if(++counter > 10)
-        {
-            counter = 0;
-            if(++yyy > 0x2000)
-            {
-                yyy = 0;
 
-                if(bShow == 0)
+        if(++u32CounterA > 10)
+        {
+            u32CounterA = 0;
+            if(++u32CounterB > 0x2000)
+            {
+                u32CounterB = 0;
+                if(u8Direction == 0)
                 {
-                    if(++light > 10)
+                    if(++u8Light > 10)
                     {
-                        bShow = 1;
+                        u8Direction = !u8Direction;
                     }
                 }
                 else
                 {
-                    if(--light <= 0)
+                    if(--u8Light == 0)
                     {
-                        bShow = 0;
+                        u8Direction = !u8Direction;
                     }
                 }
             }
         }
 
 
-
-
+        DAC1_SetOutput(au8SinusWave[u32CurrentSample]);
+        if(++u32CurrentSample > 100)
         {
-            xxx = 0;
+            u32CurrentSample = 0;
         }
 
 
@@ -24109,4 +24119,35 @@ int main(void)
 
 
     return 0;
+}
+
+
+static void vRGB_GPIO_Init(void)
+{
+    TRISB &= ~(1U << 7U);
+    TRISB &= ~(1U << 6U);
+    TRISB &= ~(1U << 5U);
+    WPUB = 0;
+    ODCONB = 0;
+}
+
+static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+{
+    *pu8GPIO_Port |= (1U << u8GPIO_Pin);
+}
+
+static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+{
+    *pu8GPIO_Port &= ~(1U << u8GPIO_Pin);
+}
+
+
+
+static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)
+{
+    static double const PI = 3.14159265;
+    for (int i = 0; i < u32Samples; ++i)
+    {
+        pu8OutputArray[i] = (uint8_t)(u32Amplitude * (1 + sinf(2 * PI * i / u32Samples)) + u32Offset);
+    }
 }
