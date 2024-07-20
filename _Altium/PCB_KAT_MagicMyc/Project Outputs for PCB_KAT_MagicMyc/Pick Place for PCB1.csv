@@ -1,0 +1,14 @@
+Altium Designer Pick and Place Locations
+P:\Projekt\Altium\PCB_KAT_MagicMyc\PCB_KAT_MagicMyc\Project Outputs for PCB_KAT_MagicMyc\Pick Place for PCB1.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       01.07.24
+Time:       00:36
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"PIC18F15Q41-I/SS","PIC18F15Q41-ISS","TopLayer","SSOP20_SS_MCH","3366.142","3435.039","0","No Description Available"

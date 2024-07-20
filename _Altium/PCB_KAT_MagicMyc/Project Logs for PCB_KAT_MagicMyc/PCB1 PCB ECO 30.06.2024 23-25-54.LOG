@@ -1,0 +1,43 @@
+Added Component: Designator=U1(SSOP20_SS_MCH)
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Type"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-20
+Added Pin To Net: NetName=RA0 Pin=U1-19
+Added Net: Name=RA0
+Added Pin To Net: NetName=RA1 Pin=U1-18
+Added Net: Name=RA1
+Added Pin To Net: NetName=RA2 Pin=U1-17
+Added Net: Name=RA2
+Added Pin To Net: NetName=RA3 Pin=U1-4
+Added Net: Name=RA3
+Added Pin To Net: NetName=RA4 Pin=U1-3
+Added Net: Name=RA4
+Added Pin To Net: NetName=RA5 Pin=U1-2
+Added Net: Name=RA5
+Added Pin To Net: NetName=RB4 Pin=U1-13
+Added Net: Name=RB4
+Added Pin To Net: NetName=RB5 Pin=U1-12
+Added Net: Name=RB5
+Added Pin To Net: NetName=RB6 Pin=U1-11
+Added Net: Name=RB6
+Added Pin To Net: NetName=RB7 Pin=U1-10
+Added Net: Name=RB7
+Added Pin To Net: NetName=RC0 Pin=U1-16
+Added Net: Name=RC0
+Added Pin To Net: NetName=RC1 Pin=U1-15
+Added Net: Name=RC1
+Added Pin To Net: NetName=RC2 Pin=U1-14
+Added Net: Name=RC2
+Added Pin To Net: NetName=RC3 Pin=U1-7
+Added Net: Name=RC3
+Added Pin To Net: NetName=RC4 Pin=U1-6
+Added Net: Name=RC4
+Added Pin To Net: NetName=RC5 Pin=U1-5
+Added Net: Name=RC5
+Added Pin To Net: NetName=RC6 Pin=U1-8
+Added Net: Name=RC6
+Added Pin To Net: NetName=RC7 Pin=U1-9
+Added Net: Name=RC7
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PIC18F15Q41-ISS

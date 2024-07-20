@@ -1,0 +1,9 @@
+Added Component: Designator=U1(SSOP20_SS_MCH)
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "Type"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=U1-1
+Added Net: Name=+5
+Added Pin To Net: NetName=GND Pin=U1-20
+Added Net: Name=GND
+Added Class: Name=Sheet1
