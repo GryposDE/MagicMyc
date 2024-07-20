@@ -7,6 +7,4 @@ mcc_generated_files/system/src/../../system/pins.h  \
 mcc_generated_files/system/src/../../dac/dac1.h  \
 mcc_generated_files/system/src/../../pwm/pwm1_16bit.h  \
 mcc_generated_files/system/src/../../pwm/pwm2_16bit.h  \
-mcc_generated_files/system/src/../../spi/spi1.h  \
-mcc_generated_files/system/src/../../spi/spi_interface.h  \
 mcc_generated_files/system/src/../../system/interrupt.h 

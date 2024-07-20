@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/P:/Projekt/PIC/MagicMyc/mcc_generated_files/dac/dac1.h</file>
             <file>file:/P:/Projekt/PIC/MagicMyc/main.c</file>
+            <file>file:/P:/Projekt/PIC/MagicMyc/mcc_generated_files/spi/spi_polling_types.h</file>
+            <file>file:/P:/Projekt/PIC/MagicMyc/mcc_generated_files/spi/spi_interface.h</file>
         </group>
     </open-files>
 </project-private>

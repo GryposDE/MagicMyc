@@ -23513,117 +23513,6 @@ void PWM2_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM2_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
 # 45 "mcc_generated_files/system/src/../system.h" 2
 
-# 1 "mcc_generated_files/system/src/../../spi/spi1.h" 1
-# 44 "mcc_generated_files/system/src/../../spi/spi1.h"
-# 1 "mcc_generated_files/system/src/../../spi/spi_interface.h" 1
-# 39 "mcc_generated_files/system/src/../../spi/spi_interface.h"
-# 1 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 3
-# 1 "S:\\XC8C\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 138 "S:\\XC8C\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 2 3
-# 39 "mcc_generated_files/system/src/../../spi/spi_interface.h" 2
-
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 44 "mcc_generated_files/system/src/../../spi/spi1.h" 2
-
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI1_Host;
-# 120 "mcc_generated_files/system/src/../../spi/spi1.h"
-typedef enum
-{
-    HOST_CONFIG,
-    SPI1_DEFAULT
-} spi1_configuration_name_t;
-
-
-
-
-
-
-
-void SPI1_Initialize(void);
-
-
-
-
-
-
-
-void SPI1_Deinitialize(void);
-# 150 "mcc_generated_files/system/src/../../spi/spi1.h"
-_Bool SPI1_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI1_Close(void);
-# 167 "mcc_generated_files/system/src/../../spi/spi1.h"
-void SPI1_BufferExchange(void * bufferData, size_t bufferSize);
-# 176 "mcc_generated_files/system/src/../../spi/spi1.h"
-void SPI1_BufferWrite(void * bufferData, size_t bufferSize);
-# 185 "mcc_generated_files/system/src/../../spi/spi1.h"
-void SPI1_BufferRead(void * bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI1_ByteExchange(uint8_t byteData);
-
-
-
-
-
-
-
-void SPI1_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI1_ByteRead(void);
-# 218 "mcc_generated_files/system/src/../../spi/spi1.h"
-_Bool SPI1_IsRxReady(void);
-# 227 "mcc_generated_files/system/src/../../spi/spi1.h"
-_Bool SPI1_IsTxReady(void);
-# 46 "mcc_generated_files/system/src/../system.h" 2
 
 # 1 "mcc_generated_files/system/src/../../system/interrupt.h" 1
 # 69 "mcc_generated_files/system/src/../../system/interrupt.h"
@@ -23674,6 +23563,6 @@ void SYSTEM_Initialize(void)
     DAC1_Initialize();
     PWM1_16BIT_Initialize();
     PWM2_16BIT_Initialize();
-    SPI1_Initialize();
+
     INTERRUPT_Initialize();
 }

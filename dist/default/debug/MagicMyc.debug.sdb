@@ -3,14 +3,54 @@
 [d edition pro ]
 [d chip 18F15Q41 ]
 [d frameptr 1249 ]
-"49 P:\Projekt\PIC\MagicMyc\main.c
-[v _generate_sine_wave generate_sine_wave `(v  1 e 1 0 ]
-"55
+"53 P:\Projekt\PIC\MagicMyc\main.c
+[e E14071 . `uc
+SPI_MODE_0 0
+SPI_MODE_1 1
+SPI_MODE_2 2
+SPI_MODE_3 3
+]
+[e E14056 . `uc
+SPI_CLKSEL_SYSCLK 0
+SPI_CLKSEL_HFINTOSC 1
+SPI_CLKSEL_MFINTOSC 2
+SPI_CLKSEL_EXTOSC 3
+SPI_CLKSEL_ClockRefOutput 4
+SPI_CLKSEL_TMR0_OUT 5
+SPI_CLKSEL_TMR2_Postscaler_OUT 6
+SPI_CLKSEL_TMR4_Postscaler_OUT 7
+SPI_CLKSEL_SMT1_OUT 8
+SPI_CLKSEL_CLC1_OUT 9
+SPI_CLKSEL_CLC2_OUT 10
+SPI_CLKSEL_CLC3_OUT 11
+SPI_CLKSEL_CLC4_OUT 12
+]
+"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
+[e E65 . `uc
+SPI_MODE_0 0
+SPI_MODE_1 1
+SPI_MODE_2 2
+SPI_MODE_3 3
+]
+[e E50 . `uc
+SPI_CLKSEL_SYSCLK 0
+SPI_CLKSEL_HFINTOSC 1
+SPI_CLKSEL_MFINTOSC 2
+SPI_CLKSEL_EXTOSC 3
+SPI_CLKSEL_ClockRefOutput 4
+SPI_CLKSEL_TMR0_OUT 5
+SPI_CLKSEL_TMR2_Postscaler_OUT 6
+SPI_CLKSEL_TMR4_Postscaler_OUT 7
+SPI_CLKSEL_SMT1_OUT 8
+SPI_CLKSEL_CLC1_OUT 9
+SPI_CLKSEL_CLC2_OUT 10
+SPI_CLKSEL_CLC3_OUT 11
+SPI_CLKSEL_CLC4_OUT 12
+]
+"47 P:\Projekt\PIC\MagicMyc\main.c
 [v _main main `(i  1 e 2 0 ]
 "44 P:\Projekt\PIC\MagicMyc\mcc_generated_files/dac/src/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
-"53
-[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
 "50 P:\Projekt\PIC\MagicMyc\mcc_generated_files/pwm/src/pwm1_16bit.c
 [v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
 "189
@@ -89,22 +129,30 @@
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "41 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"26 S:\XC8C\pic\sources\c99\common\__cosdf.c
-[v ___cosdf __cosdf `(f  1 e 4 0 ]
-"44 S:\XC8C\pic\sources\c99\common\__rem_pio2f.c
-[v ___rem_pio2f __rem_pio2f `(i  1 e 2 0 ]
-"26 S:\XC8C\pic\sources\c99\common\__sindf.c
-[v ___sindf __sindf `(f  1 e 4 0 ]
-"4 S:\XC8C\pic\sources\c99\common\fabsf.c
-[v _fabsf fabsf `(f  1 e 4 0 ]
+"3 S:\XC8C\pic\sources\c99\common\_Exit.c
+[v __Exit _Exit `(v  1 e 1 0 ]
+"4 S:\XC8C\pic\sources\c99\common\abort.c
+[v _abort abort `(v  1 e 1 0 ]
+"1 S:\XC8C\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"8 S:\XC8C\pic\sources\c99\common\assert.c
+[v ___assert_fail __assert_fail `(v  1 e 1 0 ]
+"11 S:\XC8C\pic\sources\c99\common\atexit.c
+[v ___funcs_on_exit __funcs_on_exit `(v  1 e 1 0 ]
+"7 S:\XC8C\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 S:\XC8C\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"1177 S:\XC8C\pic\sources\c99\common\doprnt.c
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1817
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"8 S:\XC8C\pic\sources\c99\common\exit.c
+[v _exit exit `(v  1 e 1 0 ]
 "4 S:\XC8C\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"15 S:\XC8C\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 S:\XC8C\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"43 S:\XC8C\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
 "86 S:\XC8C\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 S:\XC8C\pic\sources\c99\common\ftdiv.c
@@ -113,8 +161,14 @@
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 S:\XC8C\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"27 S:\XC8C\pic\sources\c99\common\sinf.c
-[v _sinf sinf `(f  1 e 4 0 ]
+"8 S:\XC8C\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 S:\XC8C\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 S:\XC8C\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"7 S:\XC8C\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 S:\XC8C\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -127,10 +181,14 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 S:\XC8C\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"10 S:\XC8C\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"47 P:\Projekt\PIC\MagicMyc\main.c
-[v _sine_wave sine_wave `[100]uc  1 e 100 0 ]
+"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
+[v _s8SPI_Master_Init s8SPI_Master_Init `(c  1 e 1 0 ]
+"132
+[v _vSPI_Enable vSPI_Enable `(v  1 s 1 vSPI_Enable ]
+"137
+[v _vSPI_Disable vSPI_Disable `(v  1 s 1 vSPI_Disable ]
+"142
+[v _vSPI_ClearFIFOs vSPI_ClearFIFOs `(v  1 s 1 vSPI_ClearFIFOs ]
 "43 P:\Projekt\PIC\MagicMyc\mcc_generated_files/pwm/src/pwm1_16bit.c
 [v _PWM1_16BIT_Slice1Output1_InterruptHandler PWM1_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output1_InterruptHandler ]
 "44
@@ -563,208 +621,185 @@
 "38253
 "38253
 [v _INTCON0bits INTCON0bits `VES783  1 e 1 @1238 ]
-"55 P:\Projekt\PIC\MagicMyc\main.c
+"8 S:\XC8C\pic\sources\c99\common\atexit.c
+[v _funcs funcs `[3]*.37(v  1 s 6 funcs ]
+"9
+[v _count count `c  1 s 1 count ]
+"153 S:\XC8C\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"154
+[v _flags flags `uc  1 s 1 flags ]
+"185
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"47 P:\Projekt\PIC\MagicMyc\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"79
-[v main@xxx xxx `ul  1 a 4 108 ]
-"81
-[v main@counter counter `ul  1 a 4 104 ]
-"80
-[v main@light light `c  1 a 1 112 ]
-"78
-[v main@bShow bShow `uc  1 a 1 103 ]
-"130
-} 0
-"49
-[v _generate_sine_wave generate_sine_wave `(v  1 e 1 0 ]
-{
-"50
-[v generate_sine_wave@i i `i  1 a 2 97 ]
-"53
-} 0
-"27 S:\XC8C\pic\sources\c99\common\sinf.c
-[v _sinf sinf `(f  1 e 4 0 ]
-{
-[u S1505 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"31
-[v sinf@ux ux `S1505  1 a 4 81 ]
-"29
-[v sinf@y y `d  1 a 4 77 ]
-"32
-[v sinf@sign sign `a  1 a 1 72 ]
-"30
-[v sinf@n n `uc  1 a 1 71 ]
-"27
-[v sinf@x x `f  1 p 4 59 ]
 "82
+[v main@counter counter `ul  1 a 4 68 ]
+[s S1061 . 4 `E14071 1 eSPI_Mode 1 0 `E14056 1 eSPI_CLKSEL 1 1 `uc 1 u8SPI_Baud 1 2 `uc 1 bMSB_First 1 3 ]
+"53
+[v main@sConfig sConfig `CS1061  1 a 4 64 ]
+"80
+[v main@yyy yyy `ul  1 a 4 59 ]
+"81
+[v main@light light `c  1 a 1 72 ]
+"78
+[v main@bShow bShow `uc  1 a 1 63 ]
+"51
+[v main@F14118 F14118 `S1061  1 s 4 F14118 ]
+"139
 } 0
-"26 S:\XC8C\pic\sources\c99\common\__sindf.c
-[v ___sindf __sindf `(f  1 e 4 0 ]
+"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
+[v _s8SPI_Master_Init s8SPI_Master_Init `(c  1 e 1 0 ]
 {
-"28
-[v ___sindf@z z `d  1 a 4 24 ]
-[v ___sindf@s s `d  1 a 4 20 ]
-[v ___sindf@w w `d  1 a 4 4 ]
-[v ___sindf@r r `d  1 a 4 0 ]
-"26
-[v ___sindf@x x `d  1 p 4 80 ]
-"36
+[s S1113 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
+[v s8SPI_Master_Init@psSPI_Handler psSPI_Handler `C*.39VES1113  1 p 2 49 ]
+[s S1061 . 4 `E14071 1 eSPI_Mode 1 0 `E14056 1 eSPI_CLKSEL 1 1 `uc 1 u8SPI_Baud 1 2 `uc 1 bMSB_First 1 3 ]
+[v s8SPI_Master_Init@psConfig psConfig `C*.39CS1061  1 p 2 51 ]
+"68
 } 0
-"44 S:\XC8C\pic\sources\c99\common\__rem_pio2f.c
-[v ___rem_pio2f __rem_pio2f `(i  1 e 2 0 ]
+"132
+[v _vSPI_Enable vSPI_Enable `(v  1 s 1 vSPI_Enable ]
 {
-"49
-[v ___rem_pio2f@n n `l  1 a 4 55 ]
-"55
-[v ___rem_pio2f@t t `f  1 a 4 51 ]
-"48
-[v ___rem_pio2f@fn fn `d  1 a 4 47 ]
-[u S1505 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"46
-[v ___rem_pio2f@ux ux `S1505  1 a 4 43 ]
-"47
-[v ___rem_pio2f@ty ty `[1]d  1 a 4 34 ]
-"50
-[v ___rem_pio2f@sign sign `a  1 a 1 42 ]
-"44
-[v ___rem_pio2f@x x `f  1 p 4 28 ]
-[v ___rem_pio2f@y y `*.39d  1 p 2 32 ]
-"45
-[v ___rem_pio2f@F526 F526 `S1505  1 s 4 F526 ]
-"102
+[s S1113 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
+[v vSPI_Enable@psSPI_Handler psSPI_Handler `C*.39VES1113  1 p 2 0 ]
+"135
 } 0
-"4 S:\XC8C\pic\sources\c99\common\fabsf.c
-[v _fabsf fabsf `(f  1 e 4 0 ]
+"137
+[v _vSPI_Disable vSPI_Disable `(v  1 s 1 vSPI_Disable ]
 {
-[u S1505 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"6
-[v fabsf@u u `S1505  1 a 4 4 ]
-"4
-[v fabsf@x x `f  1 p 4 0 ]
-"5
-[v fabsf@F465 F465 `S1505  1 s 4 F465 ]
-"9
+[s S1113 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
+[v vSPI_Disable@psSPI_Handler psSPI_Handler `C*.39VES1113  1 p 2 0 ]
+"140
 } 0
-"10 S:\XC8C\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"142
+[v _vSPI_ClearFIFOs vSPI_ClearFIFOs `(v  1 s 1 vSPI_ClearFIFOs ]
 {
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[s S1113 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
+[v vSPI_ClearFIFOs@psSPI_Handler psSPI_Handler `C*.39VES1113  1 p 2 0 ]
+"145
+} 0
+"8 S:\XC8C\pic\sources\c99\common\assert.c
+[v ___assert_fail __assert_fail `(v  1 e 1 0 ]
+{
+[v ___assert_fail@expr expr `*.31Cuc  1 p 1 44 ]
+[v ___assert_fail@file file `*.31Cuc  1 p 1 45 ]
+[v ___assert_fail@line line `i  1 p 2 46 ]
+[v ___assert_fail@func func `*.31Cuc  1 p 1 48 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
-"44
 } 0
-"43 S:\XC8C\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
+"5 S:\XC8C\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
 {
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 89 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 88 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 80 ]
-"70
-} 0
-"245 S:\XC8C\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-{
-[v ___flsub@b b `d  1 p 4 80 ]
-[v ___flsub@a a `d  1 p 4 84 ]
-"250
-} 0
-"15 S:\XC8C\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
-{
-[v ___flneg@f1 f1 `d  1 p 4 24 ]
-"20
-} 0
-"26 S:\XC8C\pic\sources\c99\common\__cosdf.c
-[v ___cosdf __cosdf `(f  1 e 4 0 ]
-{
-"28
-[v ___cosdf@z z `d  1 a 4 20 ]
-[v ___cosdf@w w `d  1 a 4 16 ]
-[v ___cosdf@r r `d  1 a 4 0 ]
-"26
-[v ___cosdf@x x `d  1 p 4 80 ]
-"35
-} 0
-"8 S:\XC8C\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S1370 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S1375 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1378 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1370 1 fAsBytes 4 0 `S1375 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1378  1 a 4 33 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1446 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1449 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1446 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1449  1 a 2 37 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 32 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 31 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 26 ]
 "8
-[v ___flmul@b b `d  1 p 4 14 ]
-[v ___flmul@a a `d  1 p 4 18 ]
-"205
-} 0
-"10 S:\XC8C\pic\sources\c99\common\sprcadd.c
-[v ___fladd __fladd `(d  1 e 4 0 ]
-{
-"17
-[v ___fladd@grs grs `uc  1 a 1 79 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 78 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 77 ]
+[v printf@ap ap `[1]*.39v  1 a 2 42 ]
+"5
+[v printf@fmt fmt `*.31Cuc  1 p 1 33 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 76 ]
-"10
-[v ___fladd@b b `d  1 p 4 64 ]
-[v ___fladd@a a `d  1 p 4 68 ]
-"237
 } 0
-"11 S:\XC8C\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"1817 S:\XC8C\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-"21
-[v ___fldiv@grs grs `ul  1 a 4 58 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 51 ]
-"20
-[v ___fldiv@new_exp new_exp `s  1 a 2 56 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 63 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 62 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 55 ]
+"1820
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 32 ]
+[s S1862 _IO_FILE 0 ]
+"1817
+[v vfprintf@fp fp `*.39S1862  1 p 2 27 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 29 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 30 ]
+"1840
+} 0
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+"1669
+[v vfpfcnvrt@cp_1909 cp `*.35uc  1 a 2 18 ]
+[u S1875 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v vfpfcnvrt@convarg convarg `S1875  1 a 4 22 ]
+"1179
+[v vfpfcnvrt@c c `uc  1 a 1 26 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 21 ]
+"1180
+[v vfpfcnvrt@done done `a  1 a 1 20 ]
+[s S1862 _IO_FILE 0 ]
+"1177
+[v vfpfcnvrt@fp fp `*.39S1862  1 p 2 10 ]
+[v vfpfcnvrt@fmt fmt `*.39*.31uc  1 p 2 12 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 14 ]
+"1814
+} 0
+"8 S:\XC8C\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[u S1841 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1844 _IO_FILE 12 `S1841 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1844  1 p 2 2 ]
+"24
+} 0
+"7 S:\XC8C\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 S:\XC8C\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 6 ]
+"4
+} 0
+"7 S:\XC8C\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 S:\XC8C\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
 "11
-[v ___fldiv@b b `d  1 p 4 39 ]
-[v ___fldiv@a a `d  1 p 4 43 ]
-"185
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"4 S:\XC8C\pic\sources\c99\common\abort.c
+[v _abort abort `(v  1 e 1 0 ]
+{
+"6
+} 0
+"8 S:\XC8C\pic\sources\c99\common\exit.c
+[v _exit exit `(v  1 e 1 0 ]
+{
+[v exit@code code `i  1 p 2 2 ]
+"13
+} 0
+"11 S:\XC8C\pic\sources\c99\common\atexit.c
+[v ___funcs_on_exit __funcs_on_exit `(v  1 e 1 0 ]
+{
+"18
+} 0
+"3 S:\XC8C\pic\sources\c99\common\_Exit.c
+[v __Exit _Exit `(v  1 e 1 0 ]
+{
+[v __Exit@ec ec `i  1 p 2 0 ]
+"6
 } 0
 "41 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "50
-} 0
-"68 P:\Projekt\PIC\MagicMyc\mcc_generated_files/spi/src/spi1.c
-[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
-{
-"81
 } 0
 "50 P:\Projekt\PIC\MagicMyc\mcc_generated_files/pwm/src/pwm2_16bit.c
 [v _PWM2_16BIT_Initialize PWM2_16BIT_Initialize `(v  1 e 1 0 ]
@@ -849,13 +884,4 @@
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
 "58
-} 0
-"53 P:\Projekt\PIC\MagicMyc\mcc_generated_files/dac/src/dac1.c
-[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 1 0 ]
-{
-[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
-[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
-"55
-[v DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
-"56
 } 0

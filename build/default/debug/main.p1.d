@@ -7,7 +7,7 @@ mcc_generated_files/system/../system/pins.h  \
 mcc_generated_files/system/../dac/dac1.h  \
 mcc_generated_files/system/../pwm/pwm1_16bit.h  \
 mcc_generated_files/system/../pwm/pwm2_16bit.h  \
-mcc_generated_files/system/../spi/spi1.h  \
-mcc_generated_files/system/../spi/spi_interface.h  \
 mcc_generated_files/system/../system/interrupt.h  \
-mcc_generated_files/timer/delay.h 
+mcc_generated_files/timer/delay.h  \
+SPI/SPI_Master.h  \
+SPI/SPI_Internal.h 

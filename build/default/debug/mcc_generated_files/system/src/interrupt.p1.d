@@ -7,6 +7,4 @@ mcc_generated_files/system/src/../../system/../system/clock.h  \
 mcc_generated_files/system/src/../../system/../system/pins.h  \
 mcc_generated_files/system/src/../../system/../dac/dac1.h  \
 mcc_generated_files/system/src/../../system/../pwm/pwm1_16bit.h  \
-mcc_generated_files/system/src/../../system/../pwm/pwm2_16bit.h  \
-mcc_generated_files/system/src/../../system/../spi/spi1.h  \
-mcc_generated_files/system/src/../../system/../spi/spi_interface.h 
+mcc_generated_files/system/src/../../system/../pwm/pwm2_16bit.h 

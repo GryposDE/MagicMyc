@@ -1,14 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"369 S:\XC8C\pic\include\c99\math.h
-[; ;S:\XC8C\pic\include\c99\math.h: 369: float sinf(float);
-[v _sinf `(f ~T0 @X0 0 ef1`f ]
 [p mainexit ]
 "56 ./mcc_generated_files/system/system.h
 [; ;./mcc_generated_files/system/system.h: 56: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"53 ./mcc_generated_files/system/../dac/dac1.h
-[; ;./mcc_generated_files/system/../dac/dac1.h: 53: void DAC1_Initialize(void);
+"53 ./mcc_generated_files/dac/dac1.h
 [v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
+"53 main.c
+[; ;main.c: 53:     sSPI_Config const sConfig = {
+[c E14071 0 1 2 3 .. ]
+[n E14071 . SPI_MODE_0 SPI_MODE_1 SPI_MODE_2 SPI_MODE_3  ]
+[c E14056 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E14056 . SPI_CLKSEL_SYSCLK SPI_CLKSEL_HFINTOSC SPI_CLKSEL_MFINTOSC SPI_CLKSEL_EXTOSC SPI_CLKSEL_ClockRefOutput SPI_CLKSEL_TMR0_OUT SPI_CLKSEL_TMR2_Postscaler_OUT SPI_CLKSEL_TMR4_Postscaler_OUT SPI_CLKSEL_SMT1_OUT SPI_CLKSEL_CLC1_OUT SPI_CLKSEL_CLC2_OUT SPI_CLKSEL_CLC3_OUT SPI_CLKSEL_CLC4_OUT  ]
+"40 ./SPI/SPI_Master.h
+[; ;./SPI/SPI_Master.h: 40: {
+[s S1913 `E14071 1 `E14056 1 `uc 1 `uc 1 ]
+[n S1913 . eSPI_Mode eSPI_CLKSEL u8SPI_Baud bMSB_First ]
+"10 ./SPI/SPI_Internal.h
+[; ;./SPI/SPI_Internal.h: 10: {
+[s S1912 `Vuc 1 `Vuc 1 `Vus 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 ]
+[n S1912 . SPIxRXB SPIxTXB SPIxTCNT SPIxCON0 SPIxCON1 SPIxCON2 SPIxSTATUS SPIxTWIDTH SPIxBAUD SPIxINTF SPIxINTE SPIxCLK ]
+[v F14084 `*S1912 ~T0 @X0 1 t ]
+[v F14085 `*CS1913 ~T0 @X0 1 t ]
+"52 ./SPI/SPI_Master.h
+[; ;./SPI/SPI_Master.h: 52: int8_t s8SPI_Master_Init(sSPI_Handler_t* const psSPI_Handler, sSPI_Config const* const psConfig);
+[v _s8SPI_Master_Init `(c ~T0 @X0 0 ef2`C*S1912`C*CS1913 ]
 "37981 S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 37981: extern volatile unsigned char TRISB __attribute__((address(0x4C7)));
 [v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
@@ -21,9 +36,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38132
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 38132: extern volatile unsigned char PORTB __attribute__((address(0x4CF)));
 [v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
-"62 ./mcc_generated_files/system/../dac/dac1.h
-[; ;./mcc_generated_files/system/../dac/dac1.h: 62: void DAC1_SetOutput(uint8_t inputData);
-[v _DAC1_SetOutput `(v ~T0 @X0 0 ef1`uc ]
 "269 S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 269: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2064,56 +2076,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39562
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 39562: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"47 main.c
-[; ;main.c: 47: uint8_t sine_wave[100];
-[v _sine_wave `uc ~T0 @X0 -> 100 `i e ]
-"49
-[; ;main.c: 49: void generate_sine_wave(void) {
-[v _generate_sine_wave `(v ~T0 @X0 1 ef ]
-{
-[e :U _generate_sine_wave ]
-[f ]
-"50
-[; ;main.c: 50:     for (int i = 0; i < 100; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1914  ]
-[e $U 1915  ]
-[e :U 1914 ]
-{
-"51
-[; ;main.c: 51:         sine_wave[i] = (uint8_t)(2047 * (1 + sinf(2 * 3.14159265 * i / 100)) + 2048);
-[e = *U + &U _sine_wave * -> -> _i `ui `ux -> -> # *U &U _sine_wave `ui `ux -> + * -> -> 2047 `i `f + -> -> 1 `i `f ( _sinf (1 -> / * * -> -> 2 `i `d .3.14159265 -> _i `d -> -> 100 `i `d `f -> -> 2048 `i `f `uc ]
-"52
-[; ;main.c: 52:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1914  ]
-[e :U 1915 ]
-}
-"53
-[; ;main.c: 53: }
-[e :UE 1913 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"55
-[; ;main.c: 55: int main(void)
+"47 main.c
+[; ;main.c: 47: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"56
-[; ;main.c: 56: {
+"48
+[; ;main.c: 48: {
 {
 [e :U _main ]
 [f ]
-"57
-[; ;main.c: 57:     SYSTEM_Initialize();
+"49
+[; ;main.c: 49:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"59
-[; ;main.c: 59:     DAC1_Initialize();
+"51
+[; ;main.c: 51:     DAC1_Initialize();
 [e ( _DAC1_Initialize ..  ]
+[v F14118 `S1913 ~T0 @X0 1 s ]
+[i F14118
+:U ..
+:U ..
+"53
+[; ;main.c: 53:     sSPI_Config const sConfig = {
+. `E14071 0
+. `E14056 2
+-> -> 1 `ui `uc
+-> -> 1 `ui `uc
+..
+..
+]
+[v _sConfig `CS1913 ~T0 @X0 1 a ]
+[e = _sConfig F14118 ]
 "60
-[; ;main.c: 60:     generate_sine_wave();
-[e ( _generate_sine_wave ..  ]
+[; ;main.c: 60:     s8SPI_Master_Init(((sSPI_Handler_t* const) (0x00000080)), &sConfig);
+[e ( _s8SPI_Master_Init (2 , -> -> 128 `i `*S1912 &U _sConfig ]
 "72
 [; ;main.c: 72:     TRISB &= ~(1U << 7U);
 [e =& _TRISB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
@@ -2138,140 +2133,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _xxx `ul ~T0 @X0 1 a ]
 [e = _xxx -> -> -> 0 `i `l `ul ]
 "80
-[; ;main.c: 80:     int8_t light = 0;
+[; ;main.c: 80:     uint32_t yyy = 0;
+[v _yyy `ul ~T0 @X0 1 a ]
+[e = _yyy -> -> -> 0 `i `l `ul ]
+"81
+[; ;main.c: 81:     int8_t light = 0;
 [v _light `c ~T0 @X0 1 a ]
 [e = _light -> -> 0 `i `c ]
-"81
-[; ;main.c: 81:     uint32_t counter = 0;
+"82
+[; ;main.c: 82:     uint32_t counter = 0;
 [v _counter `ul ~T0 @X0 1 a ]
 [e = _counter -> -> -> 0 `i `l `ul ]
-"82
-[; ;main.c: 82:     while(1)
-[e :U 1919 ]
 "83
-[; ;main.c: 83:     {
+[; ;main.c: 83:     while(1)
+[e :U 1916 ]
+"84
+[; ;main.c: 84:     {
 {
-"86
-[; ;main.c: 86:         if(counter < light)
-[e $ ! < _counter -> -> _light `l `ul 1921  ]
 "87
-[; ;main.c: 87:         {
-{
+[; ;main.c: 87:         if(counter < light)
+[e $ ! < _counter -> -> _light `l `ul 1918  ]
 "88
-[; ;main.c: 88:             PORTB |= (1U << 7U);
-[e =| _PORTB -> << -> 1 `ui -> 7 `ui `Vuc ]
+[; ;main.c: 88:         {
+{
 "89
-[; ;main.c: 89:             PORTB |= (1U << 5U);
-[e =| _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
+[; ;main.c: 89:             PORTB |= (1U << 7U);
+[e =| _PORTB -> << -> 1 `ui -> 7 `ui `Vuc ]
 "90
-[; ;main.c: 90:             PORTB &= ~(1U << 6U);
-[e =& _PORTB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
+[; ;main.c: 90:             PORTB |= (1U << 5U);
+[e =| _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
 "91
-[; ;main.c: 91:         }
-}
-[e $U 1922  ]
+[; ;main.c: 91:             PORTB &= ~(1U << 6U);
+[e =& _PORTB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
 "92
-[; ;main.c: 92:         else
-[e :U 1921 ]
-"93
-[; ;main.c: 93:         {
-{
-"94
-[; ;main.c: 94:             PORTB &= ~(1U << 7U);
-[e =& _PORTB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
-"95
-[; ;main.c: 95:             PORTB &= (1U << 5U);
-[e =& _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
-"96
-[; ;main.c: 96:             PORTB |= (1U << 6U);
-[e =| _PORTB -> << -> 1 `ui -> 6 `ui `Vuc ]
-"97
-[; ;main.c: 97:         }
+[; ;main.c: 92:         }
 }
-[e :U 1922 ]
-"99
-[; ;main.c: 99:         if(++counter > 0x2000)
-[e $ ! > =+ _counter -> -> -> 1 `i `l `ul -> -> -> 8192 `i `l `ul 1923  ]
+[e $U 1919  ]
+"93
+[; ;main.c: 93:         else
+[e :U 1918 ]
+"94
+[; ;main.c: 94:         {
+{
+"95
+[; ;main.c: 95:             PORTB &= ~(1U << 7U);
+[e =& _PORTB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
+"96
+[; ;main.c: 96:             PORTB &= (1U << 5U);
+[e =& _PORTB -> << -> 1 `ui -> 5 `ui `Vuc ]
+"97
+[; ;main.c: 97:             PORTB |= (1U << 6U);
+[e =| _PORTB -> << -> 1 `ui -> 6 `ui `Vuc ]
+"98
+[; ;main.c: 98:         }
+}
+[e :U 1919 ]
 "100
-[; ;main.c: 100:         {
-{
+[; ;main.c: 100:         if(++counter > 10)
+[e $ ! > =+ _counter -> -> -> 1 `i `l `ul -> -> -> 10 `i `l `ul 1920  ]
 "101
-[; ;main.c: 101:             if(bShow == 0)
-[e $ ! == -> _bShow `i -> 0 `i 1924  ]
-"102
-[; ;main.c: 102:             {
+[; ;main.c: 101:         {
 {
+"102
+[; ;main.c: 102:             counter = 0;
+[e = _counter -> -> -> 0 `i `l `ul ]
 "103
-[; ;main.c: 103:                 if(++light > 10)
-[e $ ! > -> =+ _light -> -> 1 `i `c `i -> 10 `i 1925  ]
+[; ;main.c: 103:             if(++yyy > 0x2000)
+[e $ ! > =+ _yyy -> -> -> 1 `i `l `ul -> -> -> 8192 `i `l `ul 1921  ]
 "104
-[; ;main.c: 104:                 {
+[; ;main.c: 104:             {
 {
 "105
-[; ;main.c: 105:                     bShow = 1;
-[e = _bShow -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:                 }
-}
-[e :U 1925 ]
+[; ;main.c: 105:                 yyy = 0;
+[e = _yyy -> -> -> 0 `i `l `ul ]
 "107
-[; ;main.c: 107:             }
-}
-[e $U 1926  ]
+[; ;main.c: 107:                 if(bShow == 0)
+[e $ ! == -> _bShow `i -> 0 `i 1922  ]
 "108
-[; ;main.c: 108:             else
-[e :U 1924 ]
+[; ;main.c: 108:                 {
+{
 "109
-[; ;main.c: 109:             {
-{
+[; ;main.c: 109:                     if(++light > 10)
+[e $ ! > -> =+ _light -> -> 1 `i `c `i -> 10 `i 1923  ]
 "110
-[; ;main.c: 110:                 if(--light <= 0)
-[e $ ! <= -> =- _light -> -> 1 `i `c `i -> 0 `i 1927  ]
-"111
-[; ;main.c: 111:                 {
+[; ;main.c: 110:                     {
 {
+"111
+[; ;main.c: 111:                         bShow = 1;
+[e = _bShow -> -> 1 `i `uc ]
 "112
-[; ;main.c: 112:                     bShow = 0;
-[e = _bShow -> -> 0 `i `uc ]
+[; ;main.c: 112:                     }
+}
+[e :U 1923 ]
 "113
 [; ;main.c: 113:                 }
 }
-[e :U 1927 ]
+[e $U 1924  ]
 "114
-[; ;main.c: 114:             }
-}
-[e :U 1926 ]
+[; ;main.c: 114:                 else
+[e :U 1922 ]
 "115
-[; ;main.c: 115:         }
-}
-[e :U 1923 ]
-"118
-[; ;main.c: 118:         DAC1_SetOutput(sine_wave[xxx]);
-[e ( _DAC1_SetOutput (1 *U + &U _sine_wave * -> _xxx `ux -> -> # *U &U _sine_wave `ui `ux ]
-"119
-[; ;main.c: 119:         if(++xxx > 100)
-[e $ ! > =+ _xxx -> -> -> 1 `i `l `ul -> -> -> 100 `i `l `ul 1928  ]
-"120
-[; ;main.c: 120:         {
+[; ;main.c: 115:                 {
 {
+"116
+[; ;main.c: 116:                     if(--light <= 0)
+[e $ ! <= -> =- _light -> -> 1 `i `c `i -> 0 `i 1925  ]
+"117
+[; ;main.c: 117:                     {
+{
+"118
+[; ;main.c: 118:                         bShow = 0;
+[e = _bShow -> -> 0 `i `uc ]
+"119
+[; ;main.c: 119:                     }
+}
+[e :U 1925 ]
+"120
+[; ;main.c: 120:                 }
+}
+[e :U 1924 ]
 "121
-[; ;main.c: 121:             xxx = 0;
-[e = _xxx -> -> -> 0 `i `l `ul ]
+[; ;main.c: 121:             }
+}
+[e :U 1921 ]
 "122
 [; ;main.c: 122:         }
 }
-[e :U 1928 ]
-"125
-[; ;main.c: 125:     }
-}
-[e :U 1918 ]
-[e $U 1919  ]
 [e :U 1920 ]
+"127
+[; ;main.c: 127:         {
+{
+"128
+[; ;main.c: 128:             xxx = 0;
+[e = _xxx -> -> -> 0 `i `l `ul ]
 "129
-[; ;main.c: 129:     return 0;
+[; ;main.c: 129:         }
+}
+"134
+[; ;main.c: 134:     }
+}
+[e :U 1915 ]
+[e $U 1916  ]
+[e :U 1917 ]
+"138
+[; ;main.c: 138:     return 0;
 [e ) -> 0 `i ]
-[e $UE 1917  ]
-"130
-[; ;main.c: 130: }
-[e :UE 1917 ]
+[e $UE 1914  ]
+"139
+[; ;main.c: 139: }
+[e :UE 1914 ]
 }

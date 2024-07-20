@@ -23513,117 +23513,6 @@ void PWM2_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM2_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
 # 45 "./mcc_generated_files/system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../spi/spi1.h" 1
-# 44 "./mcc_generated_files/system/../spi/spi1.h"
-# 1 "./mcc_generated_files/system/../spi/spi_interface.h" 1
-# 39 "./mcc_generated_files/system/../spi/spi_interface.h"
-# 1 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 3
-# 1 "S:\\XC8C\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 138 "S:\\XC8C\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "S:\\XC8C\\pic\\include\\c99\\stddef.h" 2 3
-# 39 "./mcc_generated_files/system/../spi/spi_interface.h" 2
-
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 44 "./mcc_generated_files/system/../spi/spi1.h" 2
-
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI1_Host;
-# 120 "./mcc_generated_files/system/../spi/spi1.h"
-typedef enum
-{
-    HOST_CONFIG,
-    SPI1_DEFAULT
-} spi1_configuration_name_t;
-
-
-
-
-
-
-
-void SPI1_Initialize(void);
-
-
-
-
-
-
-
-void SPI1_Deinitialize(void);
-# 150 "./mcc_generated_files/system/../spi/spi1.h"
-_Bool SPI1_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI1_Close(void);
-# 167 "./mcc_generated_files/system/../spi/spi1.h"
-void SPI1_BufferExchange(void * bufferData, size_t bufferSize);
-# 176 "./mcc_generated_files/system/../spi/spi1.h"
-void SPI1_BufferWrite(void * bufferData, size_t bufferSize);
-# 185 "./mcc_generated_files/system/../spi/spi1.h"
-void SPI1_BufferRead(void * bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI1_ByteExchange(uint8_t byteData);
-
-
-
-
-
-
-
-void SPI1_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI1_ByteRead(void);
-# 218 "./mcc_generated_files/system/../spi/spi1.h"
-_Bool SPI1_IsRxReady(void);
-# 227 "./mcc_generated_files/system/../spi/spi1.h"
-_Bool SPI1_IsTxReady(void);
-# 46 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 69 "./mcc_generated_files/system/../system/interrupt.h"
@@ -24050,21 +23939,108 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 36 "main.c" 2
-# 47 "main.c"
-uint8_t sine_wave[100];
 
-void generate_sine_wave(void) {
-    for (int i = 0; i < 100; i++) {
-        sine_wave[i] = (uint8_t)(2047 * (1 + sinf(2 * 3.14159265 * i / 100)) + 2048);
-    }
-}
+
+
+
+
+# 1 "./SPI/SPI_Master.h" 1
+# 11 "./SPI/SPI_Master.h"
+# 1 "./SPI/SPI_Internal.h" 1
+
+
+
+
+
+
+
+
+typedef struct
+{
+    volatile uint8_t SPIxRXB;
+    volatile uint8_t SPIxTXB;
+    volatile uint16_t SPIxTCNT;
+    volatile uint8_t SPIxCON0;
+    volatile uint8_t SPIxCON1;
+    volatile uint8_t SPIxCON2;
+    volatile uint8_t SPIxSTATUS;
+    volatile uint8_t SPIxTWIDTH;
+    volatile uint8_t SPIxBAUD;
+    volatile uint8_t SPIxINTF;
+    volatile uint8_t SPIxINTE;
+    volatile uint8_t SPIxCLK;
+
+} sSPI_Handler_t;
+# 11 "./SPI/SPI_Master.h" 2
+
+
+typedef enum
+{
+    SPI_CLKSEL_SYSCLK = (0b0000 << (0U)),
+    SPI_CLKSEL_HFINTOSC = (0b0001 << (0U)),
+    SPI_CLKSEL_MFINTOSC = (0b0010 << (0U)),
+    SPI_CLKSEL_EXTOSC = (0b0011 << (0U)),
+    SPI_CLKSEL_ClockRefOutput = (0b0100 << (0U)),
+    SPI_CLKSEL_TMR0_OUT = (0b0101 << (0U)),
+    SPI_CLKSEL_TMR2_Postscaler_OUT = (0b0110 << (0U)),
+    SPI_CLKSEL_TMR4_Postscaler_OUT = (0b0111 << (0U)),
+    SPI_CLKSEL_SMT1_OUT = (0b1000 << (0U)),
+    SPI_CLKSEL_CLC1_OUT = (0b1001 << (0U)),
+    SPI_CLKSEL_CLC2_OUT = (0b1010 << (0U)),
+    SPI_CLKSEL_CLC3_OUT = (0b1011 << (0U)),
+    SPI_CLKSEL_CLC4_OUT = (0b1100 << (0U)),
+
+} eSPI_CLKSEL_t;
+
+typedef enum
+{
+    SPI_MODE_0 = 0,
+    SPI_MODE_1 = 1,
+    SPI_MODE_2 = 2,
+    SPI_MODE_3 = 3,
+} eSPI_Mode_t;
+
+typedef struct
+{
+    eSPI_Mode_t eSPI_Mode;
+    eSPI_CLKSEL_t eSPI_CLKSEL;
+    uint8_t u8SPI_Baud;
+
+    uint8_t bMSB_First;
+
+} sSPI_Config;
+
+
+
+
+int8_t s8SPI_Master_Init(sSPI_Handler_t* const psSPI_Handler, sSPI_Config const* const psConfig);
+
+int8_t s8SPI_Master_TransmitData(sSPI_Handler_t* const psSPI_Handler, uint8_t const* const pu8Data, uint32_t u32DataLength);
+
+int8_t s8SPI_Master_ReceiveData(sSPI_Handler_t* const psSPI_Handler, uint8_t* const pu8Data, uint32_t u32DataLength);
+
+int8_t s8SPI_Master_TransmitReceiveData(sSPI_Handler_t* const psSPI_Handler, uint8_t const* const pu8TxData, uint8_t* const pu8RxData, uint32_t u32DataLength);
+# 41 "main.c" 2
+
+
+
+
+
 
 int main(void)
 {
     SYSTEM_Initialize();
 
     DAC1_Initialize();
-    generate_sine_wave();
+
+    sSPI_Config const sConfig = {
+        .eSPI_Mode = SPI_MODE_0,
+        .eSPI_CLKSEL = SPI_CLKSEL_MFINTOSC,
+        .u8SPI_Baud = 1U,
+        .bMSB_First = 1U,
+    };
+
+    s8SPI_Master_Init(((sSPI_Handler_t* const) (0x00000080)), &sConfig);
 # 72 "main.c"
     TRISB &= ~(1U << 7U);
     TRISB &= ~(1U << 6U);
@@ -24074,6 +24050,7 @@ int main(void)
 
     uint8_t bShow = 0;
     uint32_t xxx = 0;
+    uint32_t yyy = 0;
     int8_t light = 0;
     uint32_t counter = 0;
     while(1)
@@ -24093,30 +24070,38 @@ int main(void)
             PORTB |= (1U << 6U);
         }
 
-        if(++counter > 0x2000)
+        if(++counter > 10)
         {
-            if(bShow == 0)
+            counter = 0;
+            if(++yyy > 0x2000)
             {
-                if(++light > 10)
+                yyy = 0;
+
+                if(bShow == 0)
                 {
-                    bShow = 1;
+                    if(++light > 10)
+                    {
+                        bShow = 1;
+                    }
                 }
-            }
-            else
-            {
-                if(--light <= 0)
+                else
                 {
-                    bShow = 0;
+                    if(--light <= 0)
+                    {
+                        bShow = 0;
+                    }
                 }
             }
         }
 
 
-        DAC1_SetOutput(sine_wave[xxx]);
-        if(++xxx > 100)
+
+
         {
             xxx = 0;
         }
+
+
 
 
     }

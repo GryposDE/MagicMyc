@@ -45,7 +45,7 @@ void SYSTEM_Initialize(void)
     DAC1_Initialize();
     PWM1_16BIT_Initialize();
     PWM2_16BIT_Initialize();
-    SPI1_Host_Initialize();
+    //SPI1_Host_Initialize();
     INTERRUPT_Initialize();
 }
 

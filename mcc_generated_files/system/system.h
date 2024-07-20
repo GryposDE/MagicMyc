@@ -43,7 +43,7 @@
 #include "../dac/dac1.h"
 #include "../pwm/pwm1_16bit.h"
 #include "../pwm/pwm2_16bit.h"
-#include "../spi/spi1.h"
+//#include "../spi/spi1.h"
 #include "../system/interrupt.h"
 #include "../system/clock.h"
 

@@ -35,31 +35,29 @@
 #include "mcc_generated_files/timer/delay.h"
 #include "math.h"
 
-#include "mario.h"
+#include "mcc_generated_files/dac/dac1.h"
+//#include "mcc_generated_files/spi/spi1.h"
+
+#include "SPI/SPI_Master.h"
 
 /*
     Main application
 */
-
-#define PI 3.14159265
-#define SAMPLES 100  // Number of samples in the wave
-#define AMPLITUDE 2047  // Amplitude of the sine wave (for a 12-bit DAC, half of 4096)
-#define OFFSET 2048     // Offset for the sine wave (for a 12-bit DAC, middle of 0-4095)
-
-uint8_t sine_wave[SAMPLES];
-
-void generate_sine_wave(void) {
-    for (int i = 0; i < SAMPLES; i++) {
-        sine_wave[i] = (uint8_t)(AMPLITUDE * (1 + sin(2 * PI * i / SAMPLES)) + OFFSET);
-    }
-}
 
 int main(void)
 {
     SYSTEM_Initialize();
     
     DAC1_Initialize();
-    generate_sine_wave();
+    
+    sSPI_Config const sConfig = {
+        .eSPI_Mode = SPI_MODE_0,
+        .eSPI_CLKSEL = SPI_CLKSEL_MFINTOSC,
+        .u8SPI_Baud = 1U,    
+        .bMSB_First = 1U,
+    };
+
+    s8SPI_Master_Init(pSPI1, &sConfig);
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
@@ -124,11 +122,13 @@ int main(void)
         }
         
         // DAC
-        DAC1_SetOutput(rawData[xxx]);
-        if(++xxx > 0x600)
+        //DAC1_SetOutput(rawData[xxx]);
+        //if(++xxx > 0x600)
         {
             xxx = 0;
         }
+        
+        // SPI
         
         //DELAY_milliseconds(1000);
     }    
