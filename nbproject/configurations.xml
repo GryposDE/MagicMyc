@@ -84,6 +84,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>SPI</Elem>
+    <Elem>RGB</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

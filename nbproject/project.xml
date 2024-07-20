@@ -10,6 +10,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>SPI</sourceRootElem>
+                <sourceRootElem>RGB</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
