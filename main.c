@@ -33,13 +33,33 @@
 #include "mcc_generated_files/system/system.h"
 
 #include "mcc_generated_files/timer/delay.h"
+#include "math.h"
+
+#include "mario.h"
+
 /*
     Main application
 */
 
+#define PI 3.14159265
+#define SAMPLES 100  // Number of samples in the wave
+#define AMPLITUDE 2047  // Amplitude of the sine wave (for a 12-bit DAC, half of 4096)
+#define OFFSET 2048     // Offset for the sine wave (for a 12-bit DAC, middle of 0-4095)
+
+uint8_t sine_wave[SAMPLES];
+
+void generate_sine_wave(void) {
+    for (int i = 0; i < SAMPLES; i++) {
+        sine_wave[i] = (uint8_t)(AMPLITUDE * (1 + sin(2 * PI * i / SAMPLES)) + OFFSET);
+    }
+}
+
 int main(void)
 {
     SYSTEM_Initialize();
+    
+    DAC1_Initialize();
+    generate_sine_wave();
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
@@ -59,32 +79,33 @@ int main(void)
     
     uint8_t bShow = 0;
     uint32_t xxx = 0;
+    uint32_t yyy = 0;
     int8_t light = 0;
-    uint8_t counter = 0;
+    uint32_t counter = 0;
     while(1)
     {
+        
+        // PWM LED
         if(counter < light)
         {
             PORTB |=  (1U << 7U);
             PORTB |=  (1U << 5U);
             PORTB &= ~(1U << 6U);
         }
-        //DELAY_milliseconds(1000);
         else
         {
             PORTB &= ~(1U << 7U);
             PORTB &=  (1U << 5U);
             PORTB |=  (1U << 6U);
         }
-        //if(++light > 100)
-        //    light = 0;
         
         if(++counter > 10)
         {
             counter = 0;
-            if(++xxx > 0x2000)
+            if(++yyy > 0x2000)
             {
-                xxx = 0;
+                yyy = 0;
+            
                 if(bShow == 0)
                 {
                     if(++light > 10)
@@ -98,12 +119,21 @@ int main(void)
                     {
                         bShow = 0;
                     }
-                }                
+                }
             }
+        }
+        
+        // DAC
+        DAC1_SetOutput(rawData[xxx]);
+        if(++xxx > 0x600)
+        {
+            xxx = 0;
         }
         
         //DELAY_milliseconds(1000);
     }    
+    
+    
     
     return 0;
 }

@@ -2,14 +2,14 @@
 
 manifest_file_version: 1.0.0
 project: MagicMyc
-creation_date: 2024-07-13T18:47:51.226+02:00[Europe/Berlin]
+creation_date: 2024-07-20T12:43:20.662+02:00[Europe/Berlin]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: PIC18F15Q41
 compiler: XC8 2.46
-mcc_version: 5.5.0
-mcc_core_version: 5.7.0
+mcc_version: 5.5.1
+mcc_core_version: 5.7.1
 content_manager_version: 5.0.0
 is_mcc_offline: false
 is_using_prerelease_versions: false
