@@ -23939,96 +23939,7 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 36 "main.c" 2
-
-
-
-
-
-# 1 "./SPI/SPI_Master.h" 1
-# 11 "./SPI/SPI_Master.h"
-# 1 "./SPI/SPI_Internal.h" 1
-
-
-
-
-
-
-
-
-typedef struct
-{
-    volatile uint8_t SPIxRXB;
-    volatile uint8_t SPIxTXB;
-    volatile uint16_t SPIxTCNT;
-    volatile uint8_t SPIxCON0;
-    volatile uint8_t SPIxCON1;
-    volatile uint8_t SPIxCON2;
-    volatile uint8_t SPIxSTATUS;
-    volatile uint8_t SPIxTWIDTH;
-    volatile uint8_t SPIxBAUD;
-    volatile uint8_t SPIxINTF;
-    volatile uint8_t SPIxINTE;
-    volatile uint8_t SPIxCLK;
-
-} sSPI_Handler_t;
-# 11 "./SPI/SPI_Master.h" 2
-
-
-typedef enum
-{
-    SPI_CLKSEL_SYSCLK = (0b0000 << (0U)),
-    SPI_CLKSEL_HFINTOSC = (0b0001 << (0U)),
-    SPI_CLKSEL_MFINTOSC = (0b0010 << (0U)),
-    SPI_CLKSEL_EXTOSC = (0b0011 << (0U)),
-    SPI_CLKSEL_ClockRefOutput = (0b0100 << (0U)),
-    SPI_CLKSEL_TMR0_OUT = (0b0101 << (0U)),
-    SPI_CLKSEL_TMR2_Postscaler_OUT = (0b0110 << (0U)),
-    SPI_CLKSEL_TMR4_Postscaler_OUT = (0b0111 << (0U)),
-    SPI_CLKSEL_SMT1_OUT = (0b1000 << (0U)),
-    SPI_CLKSEL_CLC1_OUT = (0b1001 << (0U)),
-    SPI_CLKSEL_CLC2_OUT = (0b1010 << (0U)),
-    SPI_CLKSEL_CLC3_OUT = (0b1011 << (0U)),
-    SPI_CLKSEL_CLC4_OUT = (0b1100 << (0U)),
-
-} eSPI_CLKSEL_t;
-
-typedef enum
-{
-    SPI_MODE_0 = 0,
-    SPI_MODE_1 = 1,
-    SPI_MODE_2 = 2,
-    SPI_MODE_3 = 3,
-} eSPI_Mode_t;
-
-typedef struct
-{
-    eSPI_Mode_t eSPI_Mode;
-    eSPI_CLKSEL_t eSPI_CLKSEL;
-    uint8_t u8SPI_Baud;
-
-    uint8_t bMSB_First;
-
-} sSPI_Config;
-
-
-
-
-int8_t s8SPI_Master_Init(sSPI_Handler_t* const psSPI_Handler, sSPI_Config const* const psConfig);
-
-int8_t s8SPI_Master_TransmitData(sSPI_Handler_t* const psSPI_Handler, uint8_t const* const pu8Data, uint32_t u32DataLength);
-
-int8_t s8SPI_Master_ReceiveData(sSPI_Handler_t* const psSPI_Handler, uint8_t* const pu8Data, uint32_t u32DataLength);
-
-int8_t s8SPI_Master_TransmitReceiveData(sSPI_Handler_t* const psSPI_Handler, uint8_t const* const pu8TxData, uint8_t* const pu8RxData, uint32_t u32DataLength);
-# 41 "main.c" 2
-
-
-
-
-
-
-
-
+# 49 "main.c"
 static void vRGB_GPIO_Init(void);
 
 static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin);
@@ -24050,16 +23961,7 @@ int main(void)
     DAC1_Initialize();
 
     vRGB_GPIO_Init();
-
-    sSPI_Config const sConfig = {
-        .eSPI_Mode = SPI_MODE_0,
-        .eSPI_CLKSEL = SPI_CLKSEL_MFINTOSC,
-        .u8SPI_Baud = 1U,
-        .bMSB_First = 1U,
-    };
-
-    s8SPI_Master_Init(((sSPI_Handler_t* const) (0x00000080)), &sConfig);
-# 90 "main.c"
+# 92 "main.c"
     uint32_t u32CurrentSample = 0;
 
     uint8_t u8Light = 0;
@@ -24140,7 +24042,6 @@ static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin
 {
     *pu8GPIO_Port &= ~(1U << u8GPIO_Pin);
 }
-
 
 
 static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)

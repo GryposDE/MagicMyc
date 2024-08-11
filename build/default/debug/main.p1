@@ -3,7 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 ./mcc_generated_files/system/system.h
 [; ;./mcc_generated_files/system/system.h: 56: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-[v F14129 `*uc ~T0 @X0 1 t ]
+[v F14054 `*uc ~T0 @X0 1 t ]
 "55 main.c
 [; ;main.c: 55: static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset);
 [v _vGenerateSinus `(v ~T0 @X0 0 sf4`C*uc`ul`ul`ul ]
@@ -12,33 +12,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49 main.c
 [; ;main.c: 49: static void vRGB_GPIO_Init(void);
 [v _vRGB_GPIO_Init `(v ~T0 @X0 0 sf ]
-"71
-[; ;main.c: 71:     sSPI_Config const sConfig = {
-[c E14071 0 1 2 3 .. ]
-[n E14071 . SPI_MODE_0 SPI_MODE_1 SPI_MODE_2 SPI_MODE_3  ]
-[c E14056 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
-[n E14056 . SPI_CLKSEL_SYSCLK SPI_CLKSEL_HFINTOSC SPI_CLKSEL_MFINTOSC SPI_CLKSEL_EXTOSC SPI_CLKSEL_ClockRefOutput SPI_CLKSEL_TMR0_OUT SPI_CLKSEL_TMR2_Postscaler_OUT SPI_CLKSEL_TMR4_Postscaler_OUT SPI_CLKSEL_SMT1_OUT SPI_CLKSEL_CLC1_OUT SPI_CLKSEL_CLC2_OUT SPI_CLKSEL_CLC3_OUT SPI_CLKSEL_CLC4_OUT  ]
-"40 ./SPI/SPI_Master.h
-[; ;./SPI/SPI_Master.h: 40: {
-[s S1913 `E14071 1 `E14056 1 `uc 1 `uc 1 ]
-[n S1913 . eSPI_Mode eSPI_CLKSEL u8SPI_Baud bMSB_First ]
-"10 ./SPI/SPI_Internal.h
-[; ;./SPI/SPI_Internal.h: 10: {
-[s S1912 `Vuc 1 `Vuc 1 `Vus 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 `Vuc 1 ]
-[n S1912 . SPIxRXB SPIxTXB SPIxTCNT SPIxCON0 SPIxCON1 SPIxCON2 SPIxSTATUS SPIxTWIDTH SPIxBAUD SPIxINTF SPIxINTE SPIxCLK ]
-[v F14084 `*S1912 ~T0 @X0 1 t ]
-[v F14085 `*CS1913 ~T0 @X0 1 t ]
-"52 ./SPI/SPI_Master.h
-[; ;./SPI/SPI_Master.h: 52: int8_t s8SPI_Master_Init(sSPI_Handler_t* const psSPI_Handler, sSPI_Config const* const psConfig);
-[v _s8SPI_Master_Init `(c ~T0 @X0 0 ef2`C*S1912`C*CS1913 ]
-[v F14119 `*Vuc ~T0 @X0 1 t ]
-"51 main.c
+[v F14044 `*Vuc ~T0 @X0 1 t ]
+"51
 [; ;main.c: 51: static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin);
 [v _vGPIO_Set `(v ~T0 @X0 0 sf2`C*Vuc`uc ]
 "38132 S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 38132: extern volatile unsigned char PORTB __attribute__((address(0x4CF)));
 [v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
-[v F14124 `*Vuc ~T0 @X0 1 t ]
+[v F14049 `*Vuc ~T0 @X0 1 t ]
 "52 main.c
 [; ;main.c: 52: static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin);
 [v _vGPIO_Reset `(v ~T0 @X0 0 sf2`C*Vuc`uc ]
@@ -53,9 +34,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32752
 [; ;S:/MPLABX/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f15q41.h: 32752: extern volatile unsigned char ODCONB __attribute__((address(0x40A)));
 [v _ODCONB `Vuc ~T0 @X0 0 e@1034 ]
-[v F14146 `*Vuc ~T0 @X0 1 t ]
-[v F14151 `*Vuc ~T0 @X0 1 t ]
-[v F14156 `*uc ~T0 @X0 1 t ]
+[v F14069 `*Vuc ~T0 @X0 1 t ]
+[v F14074 `*Vuc ~T0 @X0 1 t ]
+[v F14079 `*uc ~T0 @X0 1 t ]
 "369 S:\XC8C\pic\include\c99\math.h
 [; ;S:\XC8C\pic\include\c99\math.h: 369: float sinf(float);
 [v _sinf `(f ~T0 @X0 0 ef1`f ]
@@ -2113,310 +2094,292 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SYSTEM_Initialize ..  ]
 "65
 [; ;main.c: 65:     static uint8_t au8SinusWave[100];
-[v F14136 `uc ~T0 @X0 -> 100 `i s au8SinusWave ]
+[v F14061 `uc ~T0 @X0 -> 100 `i s au8SinusWave ]
 "66
 [; ;main.c: 66:     vGenerateSinus((uint8_t*)au8SinusWave, 100, 2047, 2048);
-[e ( _vGenerateSinus (4 , , , &U F14136 -> -> -> 100 `i `l `ul -> -> -> 2047 `i `l `ul -> -> -> 2048 `i `l `ul ]
+[e ( _vGenerateSinus (4 , , , &U F14061 -> -> -> 100 `i `l `ul -> -> -> 2047 `i `l `ul -> -> -> 2048 `i `l `ul ]
 "67
 [; ;main.c: 67:     DAC1_Initialize();
 [e ( _DAC1_Initialize ..  ]
 "69
 [; ;main.c: 69:     vRGB_GPIO_Init();
 [e ( _vRGB_GPIO_Init ..  ]
-[v F14137 `S1913 ~T0 @X0 1 s ]
-[i F14137
-:U ..
-:U ..
-"71
-[; ;main.c: 71:     sSPI_Config const sConfig = {
-. `E14071 0
-. `E14056 2
--> -> 1 `ui `uc
--> -> 1 `ui `uc
-..
-..
-]
-[v _sConfig `CS1913 ~T0 @X0 1 a ]
-[e = _sConfig F14137 ]
-"78
-[; ;main.c: 78:     s8SPI_Master_Init(((sSPI_Handler_t* const) (0x00000080)), &sConfig);
-[e ( _s8SPI_Master_Init (2 , -> -> 128 `i `*S1912 &U _sConfig ]
-"90
-[; ;main.c: 90:     uint32_t u32CurrentSample = 0;
+"92
+[; ;main.c: 92:     uint32_t u32CurrentSample = 0;
 [v _u32CurrentSample `ul ~T0 @X0 1 a ]
 [e = _u32CurrentSample -> -> -> 0 `i `l `ul ]
-"92
-[; ;main.c: 92:     uint8_t u8Light = 0;
+"94
+[; ;main.c: 94:     uint8_t u8Light = 0;
 [v _u8Light `uc ~T0 @X0 1 a ]
 [e = _u8Light -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:     uint8_t u8Direction = 0;
+"95
+[; ;main.c: 95:     uint8_t u8Direction = 0;
 [v _u8Direction `uc ~T0 @X0 1 a ]
 [e = _u8Direction -> -> 0 `i `uc ]
-"94
-[; ;main.c: 94:     uint32_t u32CounterA = 0;
+"96
+[; ;main.c: 96:     uint32_t u32CounterA = 0;
 [v _u32CounterA `ul ~T0 @X0 1 a ]
 [e = _u32CounterA -> -> -> 0 `i `l `ul ]
-"95
-[; ;main.c: 95:     uint32_t u32CounterB = 0;
+"97
+[; ;main.c: 97:     uint32_t u32CounterB = 0;
 [v _u32CounterB `ul ~T0 @X0 1 a ]
 [e = _u32CounterB -> -> -> 0 `i `l `ul ]
-"96
-[; ;main.c: 96:     while(1)
-[e :U 1916 ]
-"97
-[; ;main.c: 97:     {
-{
+"98
+[; ;main.c: 98:     while(1)
+[e :U 1914 ]
 "99
-[; ;main.c: 99:         if(u32CounterA < u8Light)
-[e $ ! < _u32CounterA -> _u8Light `ul 1918  ]
-"100
-[; ;main.c: 100:         {
+[; ;main.c: 99:     {
 {
 "101
-[; ;main.c: 101:             vGPIO_Set(&PORTB, 7U);
-[e ( _vGPIO_Set (2 , &U _PORTB -> -> 7 `ui `uc ]
+[; ;main.c: 101:         if(u32CounterA < u8Light)
+[e $ ! < _u32CounterA -> _u8Light `ul 1916  ]
 "102
-[; ;main.c: 102:             vGPIO_Reset(&PORTB, 6U);
-[e ( _vGPIO_Reset (2 , &U _PORTB -> -> 6 `ui `uc ]
+[; ;main.c: 102:         {
+{
 "103
-[; ;main.c: 103:         }
-}
-[e $U 1919  ]
+[; ;main.c: 103:             vGPIO_Set(&PORTB, 7U);
+[e ( _vGPIO_Set (2 , &U _PORTB -> -> 7 `ui `uc ]
 "104
-[; ;main.c: 104:         else
-[e :U 1918 ]
+[; ;main.c: 104:             vGPIO_Reset(&PORTB, 6U);
+[e ( _vGPIO_Reset (2 , &U _PORTB -> -> 6 `ui `uc ]
 "105
-[; ;main.c: 105:         {
-{
-"106
-[; ;main.c: 106:             vGPIO_Reset(&PORTB, 7U);
-[e ( _vGPIO_Reset (2 , &U _PORTB -> -> 7 `ui `uc ]
-"107
-[; ;main.c: 107:             vGPIO_Set(&PORTB, 6U);
-[e ( _vGPIO_Set (2 , &U _PORTB -> -> 6 `ui `uc ]
-"108
-[; ;main.c: 108:         }
+[; ;main.c: 105:         }
 }
-[e :U 1919 ]
-"111
-[; ;main.c: 111:         if(++u32CounterA > 10)
-[e $ ! > =+ _u32CounterA -> -> -> 1 `i `l `ul -> -> -> 10 `i `l `ul 1920  ]
-"112
-[; ;main.c: 112:         {
+[e $U 1917  ]
+"106
+[; ;main.c: 106:         else
+[e :U 1916 ]
+"107
+[; ;main.c: 107:         {
 {
+"108
+[; ;main.c: 108:             vGPIO_Reset(&PORTB, 7U);
+[e ( _vGPIO_Reset (2 , &U _PORTB -> -> 7 `ui `uc ]
+"109
+[; ;main.c: 109:             vGPIO_Set(&PORTB, 6U);
+[e ( _vGPIO_Set (2 , &U _PORTB -> -> 6 `ui `uc ]
+"110
+[; ;main.c: 110:         }
+}
+[e :U 1917 ]
 "113
-[; ;main.c: 113:             u32CounterA = 0;
-[e = _u32CounterA -> -> -> 0 `i `l `ul ]
+[; ;main.c: 113:         if(++u32CounterA > 10)
+[e $ ! > =+ _u32CounterA -> -> -> 1 `i `l `ul -> -> -> 10 `i `l `ul 1918  ]
 "114
-[; ;main.c: 114:             if(++u32CounterB > 0x2000)
-[e $ ! > =+ _u32CounterB -> -> -> 1 `i `l `ul -> -> -> 8192 `i `l `ul 1921  ]
+[; ;main.c: 114:         {
+{
 "115
-[; ;main.c: 115:             {
-{
+[; ;main.c: 115:             u32CounterA = 0;
+[e = _u32CounterA -> -> -> 0 `i `l `ul ]
 "116
-[; ;main.c: 116:                 u32CounterB = 0;
-[e = _u32CounterB -> -> -> 0 `i `l `ul ]
+[; ;main.c: 116:             if(++u32CounterB > 0x2000)
+[e $ ! > =+ _u32CounterB -> -> -> 1 `i `l `ul -> -> -> 8192 `i `l `ul 1919  ]
 "117
-[; ;main.c: 117:                 if(u8Direction == 0)
-[e $ ! == -> _u8Direction `i -> 0 `i 1922  ]
-"118
-[; ;main.c: 118:                 {
+[; ;main.c: 117:             {
 {
+"118
+[; ;main.c: 118:                 u32CounterB = 0;
+[e = _u32CounterB -> -> -> 0 `i `l `ul ]
 "119
-[; ;main.c: 119:                     if(++u8Light > 10)
-[e $ ! > -> =+ _u8Light -> -> 1 `i `uc `i -> 10 `i 1923  ]
+[; ;main.c: 119:                 if(u8Direction == 0)
+[e $ ! == -> _u8Direction `i -> 0 `i 1920  ]
 "120
-[; ;main.c: 120:                     {
+[; ;main.c: 120:                 {
 {
 "121
-[; ;main.c: 121:                         u8Direction = !u8Direction;
-[e = _u8Direction -> -> ! != -> _u8Direction `i -> 0 `i `i `uc ]
+[; ;main.c: 121:                     if(++u8Light > 10)
+[e $ ! > -> =+ _u8Light -> -> 1 `i `uc `i -> 10 `i 1921  ]
 "122
-[; ;main.c: 122:                     }
-}
-[e :U 1923 ]
+[; ;main.c: 122:                     {
+{
 "123
-[; ;main.c: 123:                 }
-}
-[e $U 1924  ]
-"124
-[; ;main.c: 124:                 else
-[e :U 1922 ]
-"125
-[; ;main.c: 125:                 {
-{
-"126
-[; ;main.c: 126:                     if(--u8Light == 0)
-[e $ ! == -> =- _u8Light -> -> 1 `i `uc `i -> 0 `i 1925  ]
-"127
-[; ;main.c: 127:                     {
-{
-"128
-[; ;main.c: 128:                         u8Direction = !u8Direction;
+[; ;main.c: 123:                         u8Direction = !u8Direction;
 [e = _u8Direction -> -> ! != -> _u8Direction `i -> 0 `i `i `uc ]
-"129
-[; ;main.c: 129:                     }
-}
-[e :U 1925 ]
-"130
-[; ;main.c: 130:                 }
-}
-[e :U 1924 ]
-"131
-[; ;main.c: 131:             }
+"124
+[; ;main.c: 124:                     }
 }
 [e :U 1921 ]
-"132
-[; ;main.c: 132:         }
+"125
+[; ;main.c: 125:                 }
 }
+[e $U 1922  ]
+"126
+[; ;main.c: 126:                 else
 [e :U 1920 ]
-"135
-[; ;main.c: 135:         DAC1_SetOutput(au8SinusWave[u32CurrentSample]);
-[e ( _DAC1_SetOutput (1 *U + &U F14136 * -> _u32CurrentSample `ux -> -> # *U &U F14136 `ui `ux ]
-"136
-[; ;main.c: 136:         if(++u32CurrentSample > 100)
-[e $ ! > =+ _u32CurrentSample -> -> -> 1 `i `l `ul -> -> -> 100 `i `l `ul 1926  ]
-"137
-[; ;main.c: 137:         {
+"127
+[; ;main.c: 127:                 {
 {
+"128
+[; ;main.c: 128:                     if(--u8Light == 0)
+[e $ ! == -> =- _u8Light -> -> 1 `i `uc `i -> 0 `i 1923  ]
+"129
+[; ;main.c: 129:                     {
+{
+"130
+[; ;main.c: 130:                         u8Direction = !u8Direction;
+[e = _u8Direction -> -> ! != -> _u8Direction `i -> 0 `i `i `uc ]
+"131
+[; ;main.c: 131:                     }
+}
+[e :U 1923 ]
+"132
+[; ;main.c: 132:                 }
+}
+[e :U 1922 ]
+"133
+[; ;main.c: 133:             }
+}
+[e :U 1919 ]
+"134
+[; ;main.c: 134:         }
+}
+[e :U 1918 ]
+"137
+[; ;main.c: 137:         DAC1_SetOutput(au8SinusWave[u32CurrentSample]);
+[e ( _DAC1_SetOutput (1 *U + &U F14061 * -> _u32CurrentSample `ux -> -> # *U &U F14061 `ui `ux ]
 "138
-[; ;main.c: 138:             u32CurrentSample = 0;
-[e = _u32CurrentSample -> -> -> 0 `i `l `ul ]
+[; ;main.c: 138:         if(++u32CurrentSample > 100)
+[e $ ! > =+ _u32CurrentSample -> -> -> 1 `i `l `ul -> -> -> 100 `i `l `ul 1924  ]
 "139
-[; ;main.c: 139:         }
+[; ;main.c: 139:         {
+{
+"140
+[; ;main.c: 140:             u32CurrentSample = 0;
+[e = _u32CurrentSample -> -> -> 0 `i `l `ul ]
+"141
+[; ;main.c: 141:         }
 }
-[e :U 1926 ]
-"144
-[; ;main.c: 144:     }
+[e :U 1924 ]
+"146
+[; ;main.c: 146:     }
 }
+[e :U 1913 ]
+[e $U 1914  ]
 [e :U 1915 ]
-[e $U 1916  ]
-[e :U 1917 ]
-"148
-[; ;main.c: 148:     return 0;
+"150
+[; ;main.c: 150:     return 0;
 [e ) -> 0 `i ]
-[e $UE 1914  ]
-"149
-[; ;main.c: 149: }
-[e :UE 1914 ]
+[e $UE 1912  ]
+"151
+[; ;main.c: 151: }
+[e :UE 1912 ]
 }
-"152
-[; ;main.c: 152: static void vRGB_GPIO_Init(void)
+"154
+[; ;main.c: 154: static void vRGB_GPIO_Init(void)
 [v _vRGB_GPIO_Init `(v ~T0 @X0 1 sf ]
-"153
-[; ;main.c: 153: {
+"155
+[; ;main.c: 155: {
 {
 [e :U _vRGB_GPIO_Init ]
 [f ]
-"154
-[; ;main.c: 154:     TRISB &= ~(1U << 7U);
-[e =& _TRISB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
-"155
-[; ;main.c: 155:     TRISB &= ~(1U << 6U);
-[e =& _TRISB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
 "156
-[; ;main.c: 156:     TRISB &= ~(1U << 5U);
-[e =& _TRISB -> ~ << -> 1 `ui -> 5 `ui `Vuc ]
+[; ;main.c: 156:     TRISB &= ~(1U << 7U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 7 `ui `Vuc ]
 "157
-[; ;main.c: 157:     WPUB = 0;
-[e = _WPUB -> -> 0 `i `uc ]
+[; ;main.c: 157:     TRISB &= ~(1U << 6U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 6 `ui `Vuc ]
 "158
-[; ;main.c: 158:     ODCONB = 0;
-[e = _ODCONB -> -> 0 `i `uc ]
+[; ;main.c: 158:     TRISB &= ~(1U << 5U);
+[e =& _TRISB -> ~ << -> 1 `ui -> 5 `ui `Vuc ]
 "159
-[; ;main.c: 159: }
-[e :UE 1927 ]
-}
+[; ;main.c: 159:     WPUB = 0;
+[e = _WPUB -> -> 0 `i `uc ]
+"160
+[; ;main.c: 160:     ODCONB = 0;
+[e = _ODCONB -> -> 0 `i `uc ]
 "161
-[; ;main.c: 161: static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+[; ;main.c: 161: }
+[e :UE 1925 ]
+}
+"163
+[; ;main.c: 163: static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
 [v _vGPIO_Set `(v ~T0 @X0 1 sf2`C*Vuc`uc ]
-"162
-[; ;main.c: 162: {
+"164
+[; ;main.c: 164: {
 {
 [e :U _vGPIO_Set ]
-[v F14148 `*Vuc ~T0 @X0 1 t ]
-"161
-[; ;main.c: 161: static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+[v F14071 `*Vuc ~T0 @X0 1 t ]
+"163
+[; ;main.c: 163: static void vGPIO_Set(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
 [v _pu8GPIO_Port `C*Vuc ~T0 @X0 1 r1 ]
 [v _u8GPIO_Pin `uc ~T0 @X0 1 r2 ]
-"162
-[; ;main.c: 162: {
-[f ]
-"163
-[; ;main.c: 163:     *pu8GPIO_Port |= (1U << u8GPIO_Pin);
-[e =| *U _pu8GPIO_Port -> << -> 1 `ui -> _u8GPIO_Pin `i `uc ]
 "164
-[; ;main.c: 164: }
-[e :UE 1928 ]
-}
+[; ;main.c: 164: {
+[f ]
+"165
+[; ;main.c: 165:     *pu8GPIO_Port |= (1U << u8GPIO_Pin);
+[e =| *U _pu8GPIO_Port -> << -> 1 `ui -> _u8GPIO_Pin `i `uc ]
 "166
-[; ;main.c: 166: static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+[; ;main.c: 166: }
+[e :UE 1926 ]
+}
+"168
+[; ;main.c: 168: static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
 [v _vGPIO_Reset `(v ~T0 @X0 1 sf2`C*Vuc`uc ]
-"167
-[; ;main.c: 167: {
+"169
+[; ;main.c: 169: {
 {
 [e :U _vGPIO_Reset ]
-[v F14153 `*Vuc ~T0 @X0 1 t ]
-"166
-[; ;main.c: 166: static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
+[v F14076 `*Vuc ~T0 @X0 1 t ]
+"168
+[; ;main.c: 168: static void vGPIO_Reset(volatile uint8_t* const pu8GPIO_Port, uint8_t u8GPIO_Pin)
 [v _pu8GPIO_Port `C*Vuc ~T0 @X0 1 r1 ]
 [v _u8GPIO_Pin `uc ~T0 @X0 1 r2 ]
-"167
-[; ;main.c: 167: {
-[f ]
-"168
-[; ;main.c: 168:     *pu8GPIO_Port &= ~(1U << u8GPIO_Pin);
-[e =& *U _pu8GPIO_Port -> ~ << -> 1 `ui -> _u8GPIO_Pin `i `uc ]
 "169
-[; ;main.c: 169: }
-[e :UE 1929 ]
+[; ;main.c: 169: {
+[f ]
+"170
+[; ;main.c: 170:     *pu8GPIO_Port &= ~(1U << u8GPIO_Pin);
+[e =& *U _pu8GPIO_Port -> ~ << -> 1 `ui -> _u8GPIO_Pin `i `uc ]
+"171
+[; ;main.c: 171: }
+[e :UE 1927 ]
 }
-"173
-[; ;main.c: 173: static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)
-[v _vGenerateSinus `(v ~T0 @X0 1 sf4`C*uc`ul`ul`ul ]
 "174
-[; ;main.c: 174: {
+[; ;main.c: 174: static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)
+[v _vGenerateSinus `(v ~T0 @X0 1 sf4`C*uc`ul`ul`ul ]
+"175
+[; ;main.c: 175: {
 {
 [e :U _vGenerateSinus ]
-[v F14158 `*uc ~T0 @X0 1 t ]
-"173
-[; ;main.c: 173: static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)
+[v F14081 `*uc ~T0 @X0 1 t ]
+"174
+[; ;main.c: 174: static void vGenerateSinus(uint8_t* const pu8OutputArray, uint32_t u32Samples, uint32_t u32Amplitude, uint32_t u32Offset)
 [v _pu8OutputArray `C*uc ~T0 @X0 1 r1 ]
 [v _u32Samples `ul ~T0 @X0 1 r2 ]
 [v _u32Amplitude `ul ~T0 @X0 1 r3 ]
 [v _u32Offset `ul ~T0 @X0 1 r4 ]
-"174
-[; ;main.c: 174: {
-[f ]
 "175
-[; ;main.c: 175:     static double const PI = 3.14159265;
-[v F14162 `Cd ~T0 @X0 1 s PI ]
-[i F14162
+[; ;main.c: 175: {
+[f ]
+"176
+[; ;main.c: 176:     static double const PI = 3.14159265;
+[v F14085 `Cd ~T0 @X0 1 s PI ]
+[i F14085
 .3.14159265
 ]
-"176
-[; ;main.c: 176:     for (int i = 0; i < u32Samples; ++i)
+"177
+[; ;main.c: 177:     for (int i = 0; i < u32Samples; ++i)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 1934  ]
-[e :U 1931 ]
-"177
-[; ;main.c: 177:     {
-{
+[e $U 1932  ]
+[e :U 1929 ]
 "178
-[; ;main.c: 178:         pu8OutputArray[i] = (uint8_t)(u32Amplitude * (1 + sinf(2 * PI * i / u32Samples)) + u32Offset);
-[e = *U + _pu8OutputArray * -> _i `x -> -> # *U _pu8OutputArray `i `x -> + * -> _u32Amplitude `f + -> -> 1 `i `f ( _sinf (1 -> / * * -> -> 2 `i `d F14162 -> _i `d -> _u32Samples `d `f -> _u32Offset `f `uc ]
+[; ;main.c: 178:     {
+{
 "179
-[; ;main.c: 179:     }
+[; ;main.c: 179:         pu8OutputArray[i] = (uint8_t)(u32Amplitude * (1 + sinf(2 * PI * i / u32Samples)) + u32Offset);
+[e = *U + _pu8OutputArray * -> _i `x -> -> # *U _pu8OutputArray `i `x -> + * -> _u32Amplitude `f + -> -> 1 `i `f ( _sinf (1 -> / * * -> -> 2 `i `d F14085 -> _i `d -> _u32Samples `d `f -> _u32Offset `f `uc ]
+"180
+[; ;main.c: 180:     }
 }
 [e =+ _i -> 1 `i ]
-[e :U 1934 ]
-[e $ < -> -> _i `l `ul _u32Samples 1931  ]
 [e :U 1932 ]
+[e $ < -> -> _i `l `ul _u32Samples 1929  ]
+[e :U 1930 ]
 }
-"180
-[; ;main.c: 180: }
-[e :UE 1930 ]
+"181
+[; ;main.c: 181: }
+[e :UE 1928 ]
 }

@@ -38,7 +38,7 @@
 #include "mcc_generated_files/dac/dac1.h"
 //#include "mcc_generated_files/spi/spi1.h"
 
-#include "SPI/SPI_Master.h"
+//#include "SPI/SPI_Master.h"
 
 
 #define SAMPLES 100     // Number of samples in the wave
@@ -68,6 +68,7 @@ int main(void)
     
     vRGB_GPIO_Init();
     
+    /*
     sSPI_Config const sConfig = {
         .eSPI_Mode = SPI_MODE_0,
         .eSPI_CLKSEL = SPI_CLKSEL_MFINTOSC,
@@ -76,7 +77,8 @@ int main(void)
     };
 
     s8SPI_Master_Init(pSPI1, &sConfig);
-
+    */
+    
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
     // Use the following macros to: 

@@ -3,36 +3,19 @@
 [d edition pro ]
 [d chip 18F15Q41 ]
 [d frameptr 1249 ]
-"71 P:\Projekt\PIC\MagicMyc\main.c
-[e E14071 . `uc
-SPI_MODE_0 0
-SPI_MODE_1 1
-SPI_MODE_2 2
-SPI_MODE_3 3
-]
-[e E14056 . `uc
-SPI_CLKSEL_SYSCLK 0
-SPI_CLKSEL_HFINTOSC 1
-SPI_CLKSEL_MFINTOSC 2
-SPI_CLKSEL_EXTOSC 3
-SPI_CLKSEL_ClockRefOutput 4
-SPI_CLKSEL_TMR0_OUT 5
-SPI_CLKSEL_TMR2_Postscaler_OUT 6
-SPI_CLKSEL_TMR4_Postscaler_OUT 7
-SPI_CLKSEL_SMT1_OUT 8
-SPI_CLKSEL_CLC1_OUT 9
-SPI_CLKSEL_CLC2_OUT 10
-SPI_CLKSEL_CLC3_OUT 11
-SPI_CLKSEL_CLC4_OUT 12
-]
-"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
-[e E65 . `uc
-SPI_MODE_0 0
-SPI_MODE_1 1
-SPI_MODE_2 2
-SPI_MODE_3 3
-]
+"24 P:\Projekt\PIC\MagicMyc\Generic_SPI/PIC_SPI_Master.c
 [e E50 . `uc
+Generic_SUCCESS 0
+Generic_FAIL 1
+Generic_ERROR 2
+]
+[e E163 . `uc
+SPI_MODE_0 0
+SPI_MODE_1 1
+SPI_MODE_2 2
+SPI_MODE_3 3
+]
+[e E148 . `uc
 SPI_CLKSEL_SYSCLK 0
 SPI_CLKSEL_HFINTOSC 1
 SPI_CLKSEL_MFINTOSC 2
@@ -47,15 +30,37 @@ SPI_CLKSEL_CLC2_OUT 10
 SPI_CLKSEL_CLC3_OUT 11
 SPI_CLKSEL_CLC4_OUT 12
 ]
+"51 P:\Projekt\PIC\MagicMyc\Generic_GPIO/PIC_GPIO.c
+[v _vPIC_GPIO_Set vPIC_GPIO_Set `(v  1 e 1 0 ]
+"56
+[v _vPIC_GPIO_Reset vPIC_GPIO_Reset `(v  1 e 1 0 ]
+"83 P:\Projekt\PIC\MagicMyc\Generic_SPI/PIC_SPI_Master.c
+[v _s8SPI_Master_TransmitData s8SPI_Master_TransmitData `(c  1 e 1 0 ]
+"103
+[v _s8SPI_Master_ReceiveData s8SPI_Master_ReceiveData `(c  1 e 1 0 ]
+"121
+[v _s8SPI_Master_TransmitReceiveData s8SPI_Master_TransmitReceiveData `(c  1 e 1 0 ]
+"145
+[v _vSPI_Enable vSPI_Enable `(v  1 s 1 vSPI_Enable ]
+"150
+[v _vSPI_Disable vSPI_Disable `(v  1 s 1 vSPI_Disable ]
+"155
+[v _vSPI_ClearFIFOs vSPI_ClearFIFOs `(v  1 s 1 vSPI_ClearFIFOs ]
+"163
+[v _eSPI_TransmitData eSPI_TransmitData `(E50  1 e 1 0 ]
+"172
+[v _eSPI_ReceiveData eSPI_ReceiveData `(E50  1 e 1 0 ]
+"181
+[v _eSPI_TransmitReceiveData eSPI_TransmitReceiveData `(E50  1 e 1 0 ]
 "61 P:\Projekt\PIC\MagicMyc\main.c
 [v _main main `(i  1 e 2 0 ]
-"152
+"154
 [v _vRGB_GPIO_Init vRGB_GPIO_Init `(v  1 s 1 vRGB_GPIO_Init ]
-"161
+"163
 [v _vGPIO_Set vGPIO_Set `(v  1 s 1 vGPIO_Set ]
-"166
+"168
 [v _vGPIO_Reset vGPIO_Reset `(v  1 s 1 vGPIO_Reset ]
-"173
+"174
 [v _vGenerateSinus vGenerateSinus `(v  1 s 1 vGenerateSinus ]
 "44 P:\Projekt\PIC\MagicMyc\mcc_generated_files/dac/src/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
@@ -149,20 +154,10 @@ SPI_CLKSEL_CLC4_OUT 12
 [v __Exit _Exit `(v  1 e 1 0 ]
 "4 S:\XC8C\pic\sources\c99\common\abort.c
 [v _abort abort `(v  1 e 1 0 ]
-"1 S:\XC8C\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
 "8 S:\XC8C\pic\sources\c99\common\assert.c
 [v ___assert_fail __assert_fail `(v  1 e 1 0 ]
 "11 S:\XC8C\pic\sources\c99\common\atexit.c
 [v ___funcs_on_exit __funcs_on_exit `(v  1 e 1 0 ]
-"7 S:\XC8C\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 S:\XC8C\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-"1177 S:\XC8C\pic\sources\c99\common\doprnt.c
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-"1817
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "8 S:\XC8C\pic\sources\c99\common\exit.c
 [v _exit exit `(v  1 e 1 0 ]
 "4 S:\XC8C\pic\sources\c99\common\fabsf.c
@@ -183,14 +178,8 @@ SPI_CLKSEL_CLC4_OUT 12
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 S:\XC8C\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"8 S:\XC8C\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 S:\XC8C\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
 "5 S:\XC8C\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
-"7 S:\XC8C\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
 "27 S:\XC8C\pic\sources\c99\common\sinf.c
 [v _sinf sinf `(f  1 e 4 0 ]
 "10 S:\XC8C\pic\sources\c99\common\sprcadd.c
@@ -207,14 +196,9 @@ SPI_CLKSEL_CLC4_OUT 12
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 S:\XC8C\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
-[v _s8SPI_Master_Init s8SPI_Master_Init `(c  1 e 1 0 ]
-"132
-[v _vSPI_Enable vSPI_Enable `(v  1 s 1 vSPI_Enable ]
-"137
-[v _vSPI_Disable vSPI_Disable `(v  1 s 1 vSPI_Disable ]
-"142
-[v _vSPI_ClearFIFOs vSPI_ClearFIFOs `(v  1 s 1 vSPI_ClearFIFOs ]
+[s S24 . 5 `VEuc 1 ANSELx 1 0 `VEuc 1 WPUx 1 1 `VEuc 1 ODCONx 1 2 `VEuc 1 SLRCONx 1 3 `VEuc 1 INLVLx 1 4 ]
+"24 P:\Projekt\PIC\MagicMyc\Generic_GPIO/PIC_GPIO.c
+[v _apsGPIO_Configs apsGPIO_Configs `C[3]*.39VES24  1 s 6 apsGPIO_Configs ]
 "43 P:\Projekt\PIC\MagicMyc\mcc_generated_files/pwm/src/pwm1_16bit.c
 [v _PWM1_16BIT_Slice1Output1_InterruptHandler PWM1_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output1_InterruptHandler ]
 "44
@@ -227,9 +211,9 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _PWM2_16BIT_Slice1Output2_InterruptHandler PWM2_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output2_InterruptHandler ]
 "45
 [v _PWM2_16BIT_Period_InterruptHandler PWM2_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Period_InterruptHandler ]
-[s S540 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
+[s S620 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
 "63 P:\Projekt\PIC\MagicMyc\mcc_generated_files/spi/src/spi1.c
-[v _spi1_configuration spi1_configuration `C[2]S540  1 s 10 spi1_configuration ]
+[v _spi1_configuration spi1_configuration `C[2]S620  1 s 10 spi1_configuration ]
 "38 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
 "39
@@ -250,28 +234,28 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _SPI1TCNTH SPI1TCNTH `VEuc  1 e 1 @131 ]
 "3304
 [v _SPI1CON0 SPI1CON0 `VEuc  1 e 1 @132 ]
-[s S572 . 1 `uc 1 BMODE 1 0 :1:0 
+[s S652 . 1 `uc 1 BMODE 1 0 :1:0 
 `uc 1 MST 1 0 :1:1 
 `uc 1 LSBF 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 EN 1 0 :1:7 
 ]
 "3325
-[s S578 . 1 `uc 1 SPI1BMODE 1 0 :1:0 
+[s S658 . 1 `uc 1 SPI1BMODE 1 0 :1:0 
 `uc 1 SPI1MST 1 0 :1:1 
 `uc 1 SPI1LSBF 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 SPI1SPIEN 1 0 :1:7 
 ]
-[u S584 . 1 `S572 1 . 1 0 `S578 1 . 1 0 ]
-[v _SPI1CON0bits SPI1CON0bits `VES584  1 e 1 @132 ]
+[u S664 . 1 `S652 1 . 1 0 `S658 1 . 1 0 ]
+[v _SPI1CON0bits SPI1CON0bits `VES664  1 e 1 @132 ]
 "3370
 [v _SPI1CON1 SPI1CON1 `VEuc  1 e 1 @133 ]
 "3472
 [v _SPI1CON2 SPI1CON2 `VEuc  1 e 1 @134 ]
 "3672
 [v _SPI1BAUD SPI1BAUD `VEuc  1 e 1 @137 ]
-[s S640 . 1 `uc 1 . 1 0 :1:0 
+[s S720 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TXUIF 1 0 :1:1 
 `uc 1 RXOIF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -281,7 +265,7 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 SRMTIF 1 0 :1:7 
 ]
 "3769
-[s S649 . 1 `uc 1 . 1 0 :1:0 
+[s S729 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 SPI1TXUIF 1 0 :1:1 
 `uc 1 SPI1RXOIF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -290,8 +274,8 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 SPI1TCZIF 1 0 :1:6 
 `uc 1 SPI1SRMTIF 1 0 :1:7 
 ]
-[u S658 . 1 `S640 1 . 1 0 `S649 1 . 1 0 ]
-[v _SPI1INTFbits SPI1INTFbits `VES658  1 e 1 @138 ]
+[u S738 . 1 `S720 1 . 1 0 `S729 1 . 1 0 ]
+[v _SPI1INTFbits SPI1INTFbits `VES738  1 e 1 @138 ]
 "3926
 [v _SPI1CLK SPI1CLK `VEuc  1 e 1 @140 ]
 "5883
@@ -388,37 +372,37 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _PWM1PIPOS PWM1PIPOS `VEuc  1 e 1 @1126 ]
 "35101
 [v _PWM1GIR PWM1GIR `VEuc  1 e 1 @1127 ]
-[s S68 . 1 `uc 1 S1P1IF 1 0 :1:0 
+[s S148 . 1 `uc 1 S1P1IF 1 0 :1:0 
 `uc 1 S1P2IF 1 0 :1:1 
 ]
 "35112
-[u S71 . 1 `S68 1 . 1 0 ]
+[u S151 . 1 `S148 1 . 1 0 ]
 "35112
 "35112
-[v _PWM1GIRbits PWM1GIRbits `VES71  1 e 1 @1127 ]
+[v _PWM1GIRbits PWM1GIRbits `VES151  1 e 1 @1127 ]
 "35127
 [v _PWM1GIE PWM1GIE `VEuc  1 e 1 @1128 ]
-[s S144 . 1 `uc 1 S1P1IE 1 0 :1:0 
+[s S224 . 1 `uc 1 S1P1IE 1 0 :1:0 
 `uc 1 S1P2IE 1 0 :1:1 
 ]
 "35138
-[u S147 . 1 `S144 1 . 1 0 ]
+[u S227 . 1 `S224 1 . 1 0 ]
 "35138
 "35138
-[v _PWM1GIEbits PWM1GIEbits `VES147  1 e 1 @1128 ]
+[v _PWM1GIEbits PWM1GIEbits `VES227  1 e 1 @1128 ]
 "35153
 [v _PWM1CON PWM1CON `VEuc  1 e 1 @1129 ]
-[s S129 . 1 `uc 1 ERSNOW 1 0 :1:0 
+[s S209 . 1 `uc 1 ERSNOW 1 0 :1:0 
 `uc 1 ERSPOL 1 0 :1:1 
 `uc 1 LD 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 EN 1 0 :1:7 
 ]
 "35167
-[u S135 . 1 `S129 1 . 1 0 ]
+[u S215 . 1 `S209 1 . 1 0 ]
 "35167
 "35167
-[v _PWM1CONbits PWM1CONbits `VES135  1 e 1 @1129 ]
+[v _PWM1CONbits PWM1CONbits `VES215  1 e 1 @1129 ]
 "35192
 [v _PWM1S1CFG PWM1S1CFG `VEuc  1 e 1 @1130 ]
 "35258
@@ -447,17 +431,17 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _PWM2GIR PWM2GIR `VEuc  1 e 1 @1142 ]
 "35653
 "35653
-[v _PWM2GIRbits PWM2GIRbits `VES71  1 e 1 @1142 ]
+[v _PWM2GIRbits PWM2GIRbits `VES151  1 e 1 @1142 ]
 "35668
 [v _PWM2GIE PWM2GIE `VEuc  1 e 1 @1143 ]
 "35679
 "35679
-[v _PWM2GIEbits PWM2GIEbits `VES147  1 e 1 @1143 ]
+[v _PWM2GIEbits PWM2GIEbits `VES227  1 e 1 @1143 ]
 "35694
 [v _PWM2CON PWM2CON `VEuc  1 e 1 @1144 ]
 "35708
 "35708
-[v _PWM2CONbits PWM2CONbits `VES135  1 e 1 @1144 ]
+[v _PWM2CONbits PWM2CONbits `VES215  1 e 1 @1144 ]
 "35733
 [v _PWM2S1CFG PWM2S1CFG `VEuc  1 e 1 @1145 ]
 "35799
@@ -468,7 +452,7 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _PWM2S1P2L PWM2S1P2L `VEuc  1 e 1 @1148 ]
 "35866
 [v _PWM2S1P2H PWM2S1P2H `VEuc  1 e 1 @1149 ]
-[s S546 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
+[s S626 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
 `uc 1 SPI1TXIE 1 0 :1:1 
 `uc 1 SPI1IE 1 0 :1:2 
 `uc 1 TMR2IE 1 0 :1:3 
@@ -478,11 +462,11 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 TMR0IE 1 0 :1:7 
 ]
 "36686
-[u S555 . 1 `S546 1 . 1 0 ]
+[u S635 . 1 `S626 1 . 1 0 ]
 "36686
 "36686
-[v _PIE3bits PIE3bits `VES555  1 e 1 @1195 ]
-[s S77 . 1 `uc 1 U1RXIE 1 0 :1:0 
+[v _PIE3bits PIE3bits `VES635  1 e 1 @1195 ]
+[s S157 . 1 `uc 1 U1RXIE 1 0 :1:0 
 `uc 1 U1TXIE 1 0 :1:1 
 `uc 1 U1EIE 1 0 :1:2 
 `uc 1 U1IE 1 0 :1:3 
@@ -492,11 +476,11 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 PWM1IE 1 0 :1:7 
 ]
 "36748
-[u S86 . 1 `S77 1 . 1 0 ]
+[u S166 . 1 `S157 1 . 1 0 ]
 "36748
 "36748
-[v _PIE4bits PIE4bits `VES86  1 e 1 @1196 ]
-[s S269 . 1 `uc 1 SPI2RXIE 1 0 :1:0 
+[v _PIE4bits PIE4bits `VES166  1 e 1 @1196 ]
+[s S349 . 1 `uc 1 SPI2RXIE 1 0 :1:0 
 `uc 1 SPI2TXIE 1 0 :1:1 
 `uc 1 SPI2IE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -506,15 +490,15 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 PWM2IE 1 0 :1:7 
 ]
 "36814
-[s S278 . 1 `uc 1 . 1 0 :4:0 
+[s S358 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CM2IE 1 0 :1:4 
 ]
 "36814
-[u S281 . 1 `S269 1 . 1 0 `S278 1 . 1 0 ]
+[u S361 . 1 `S349 1 . 1 0 `S358 1 . 1 0 ]
 "36814
 "36814
-[v _PIE5bits PIE5bits `VES281  1 e 1 @1197 ]
-[s S798 . 1 `uc 1 INT0IF 1 0 :1:0 
+[v _PIE5bits PIE5bits `VES361  1 e 1 @1197 ]
+[s S878 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 ZCDIF 1 0 :1:1 
 `uc 1 ADIF 1 0 :1:2 
 `uc 1 ACTIF 1 0 :1:3 
@@ -524,15 +508,15 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 SMT1PWAIF 1 0 :1:7 
 ]
 "37221
-[s S807 . 1 `uc 1 . 1 0 :4:0 
+[s S887 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CM1IF 1 0 :1:4 
 ]
 "37221
-[u S810 . 1 `S798 1 . 1 0 `S807 1 . 1 0 ]
+[u S890 . 1 `S878 1 . 1 0 `S887 1 . 1 0 ]
 "37221
 "37221
-[v _PIR1bits PIR1bits `VES810  1 e 1 @1204 ]
-[s S618 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
+[v _PIR1bits PIR1bits `VES890  1 e 1 @1204 ]
+[s S698 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
 `uc 1 SPI1TXIF 1 0 :1:1 
 `uc 1 SPI1IF 1 0 :1:2 
 `uc 1 TMR2IF 1 0 :1:3 
@@ -542,11 +526,11 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 TMR0IF 1 0 :1:7 
 ]
 "37333
-[u S627 . 1 `S618 1 . 1 0 ]
+[u S707 . 1 `S698 1 . 1 0 ]
 "37333
 "37333
-[v _PIR3bits PIR3bits `VES627  1 e 1 @1206 ]
-[s S47 . 1 `uc 1 U1RXIF 1 0 :1:0 
+[v _PIR3bits PIR3bits `VES707  1 e 1 @1206 ]
+[s S127 . 1 `uc 1 U1RXIF 1 0 :1:0 
 `uc 1 U1TXIF 1 0 :1:1 
 `uc 1 U1EIF 1 0 :1:2 
 `uc 1 U1IF 1 0 :1:3 
@@ -556,11 +540,11 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 PWM1IF 1 0 :1:7 
 ]
 "37395
-[u S56 . 1 `S47 1 . 1 0 ]
+[u S136 . 1 `S127 1 . 1 0 ]
 "37395
 "37395
-[v _PIR4bits PIR4bits `VES56  1 e 1 @1207 ]
-[s S232 . 1 `uc 1 SPI2RXIF 1 0 :1:0 
+[v _PIR4bits PIR4bits `VES136  1 e 1 @1207 ]
+[s S312 . 1 `uc 1 SPI2RXIF 1 0 :1:0 
 `uc 1 SPI2TXIF 1 0 :1:1 
 `uc 1 SPI2IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -570,15 +554,15 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 PWM2IF 1 0 :1:7 
 ]
 "37461
-[s S241 . 1 `uc 1 . 1 0 :4:0 
+[s S321 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CM2IF 1 0 :1:4 
 ]
 "37461
-[u S244 . 1 `S232 1 . 1 0 `S241 1 . 1 0 ]
+[u S324 . 1 `S312 1 . 1 0 `S321 1 . 1 0 ]
 "37461
 "37461
-[v _PIR5bits PIR5bits `VES244  1 e 1 @1208 ]
-[s S836 . 1 `uc 1 INT1IF 1 0 :1:0 
+[v _PIR5bits PIR5bits `VES324  1 e 1 @1208 ]
+[s S916 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CWG1IF 1 0 :1:2 
 `uc 1 NCO1IF 1 0 :1:3 
@@ -588,11 +572,11 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 DMA2AIF 1 0 :1:7 
 ]
 "37523
-[u S845 . 1 `S836 1 . 1 0 ]
+[u S925 . 1 `S916 1 . 1 0 ]
 "37523
 "37523
-[v _PIR6bits PIR6bits `VES845  1 e 1 @1209 ]
-[s S867 . 1 `uc 1 INT2IF 1 0 :1:0 
+[v _PIR6bits PIR6bits `VES925  1 e 1 @1209 ]
+[s S947 . 1 `uc 1 INT2IF 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 TMR4IF 1 0 :1:3 
 `uc 1 DMA4SCNTIF 1 0 :1:4 
@@ -601,10 +585,10 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 DMA4AIF 1 0 :1:7 
 ]
 "37750
-[u S875 . 1 `S867 1 . 1 0 ]
+[u S955 . 1 `S947 1 . 1 0 ]
 "37750
 "37750
-[v _PIR10bits PIR10bits `VES875  1 e 1 @1213 ]
+[v _PIR10bits PIR10bits `VES955  1 e 1 @1213 ]
 "37785
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "37830
@@ -615,22 +599,24 @@ SPI_CLKSEL_CLC4_OUT 12
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
 "37981
 [v _TRISB TRISB `VEuc  1 e 1 @1223 ]
-[s S600 . 1 `uc 1 . 1 0 :4:0 
+[s S680 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISB4 1 0 :1:4 
 `uc 1 TRISB5 1 0 :1:5 
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "37995
-[u S606 . 1 `S600 1 . 1 0 ]
+[u S686 . 1 `S680 1 . 1 0 ]
 "37995
 "37995
-[v _TRISBbits TRISBbits `VES606  1 e 1 @1223 ]
+[v _TRISBbits TRISBbits `VES686  1 e 1 @1223 ]
 "38020
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
+"38082
+[v _PORTA PORTA `VEuc  1 e 1 @1230 ]
 "38132
 [v _PORTB PORTB `VEuc  1 e 1 @1231 ]
-[s S772 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[s S852 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -639,70 +625,54 @@ SPI_CLKSEL_CLC4_OUT 12
 `uc 1 GIE 1 0 :1:7 
 ]
 "38253
-[s S780 . 1 `uc 1 . 1 0 :7:0 
+[s S860 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "38253
-[u S783 . 1 `S772 1 . 1 0 `S780 1 . 1 0 ]
+[u S863 . 1 `S852 1 . 1 0 `S860 1 . 1 0 ]
 "38253
 "38253
-[v _INTCON0bits INTCON0bits `VES783  1 e 1 @1238 ]
-"8 S:\XC8C\pic\sources\c99\common\atexit.c
-[v _funcs funcs `[3]*.37(v  1 s 6 funcs ]
-"9
-[v _count count `c  1 s 1 count ]
-"153 S:\XC8C\pic\sources\c99\common\doprnt.c
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"154
-[v _flags flags `uc  1 s 1 flags ]
-"185
-[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+[v _INTCON0bits INTCON0bits `VES863  1 e 1 @1238 ]
 "61 P:\Projekt\PIC\MagicMyc\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"94
-[v main@u32CounterA u32CounterA `ul  1 a 4 133 ]
-"90
-[v main@u32CurrentSample u32CurrentSample `ul  1 a 4 129 ]
-[s S1074 . 4 `E14071 1 eSPI_Mode 1 0 `E14056 1 eSPI_CLKSEL 1 1 `uc 1 u8SPI_Baud 1 2 `uc 1 bMSB_First 1 3 ]
-"71
-[v main@sConfig sConfig `CS1074  1 a 4 125 ]
-"95
-[v main@u32CounterB u32CounterB `ul  1 a 4 121 ]
-"93
-[v main@u8Direction u8Direction `uc  1 a 1 138 ]
+"96
+[v main@u32CounterA u32CounterA `ul  1 a 4 129 ]
 "92
-[v main@u8Light u8Light `uc  1 a 1 137 ]
+[v main@u32CurrentSample u32CurrentSample `ul  1 a 4 125 ]
+"97
+[v main@u32CounterB u32CounterB `ul  1 a 4 121 ]
+"95
+[v main@u8Direction u8Direction `uc  1 a 1 134 ]
+"94
+[v main@u8Light u8Light `uc  1 a 1 133 ]
 "65
 [v main@au8SinusWave au8SinusWave `[100]uc  1 s 100 au8SinusWave ]
-"69
-[v main@F14137 F14137 `S1074  1 s 4 F14137 ]
-"149
+"151
 } 0
-"152
+"154
 [v _vRGB_GPIO_Init vRGB_GPIO_Init `(v  1 s 1 vRGB_GPIO_Init ]
 {
-"159
+"161
 } 0
-"173
+"174
 [v _vGenerateSinus vGenerateSinus `(v  1 s 1 vGenerateSinus ]
 {
-"176
+"177
 [v vGenerateSinus@i i `i  1 a 2 115 ]
-"173
+"174
 [v vGenerateSinus@pu8OutputArray pu8OutputArray `C*.39uc  1 p 2 85 ]
 [v vGenerateSinus@u32Samples u32Samples `ul  1 p 4 87 ]
 [v vGenerateSinus@u32Amplitude u32Amplitude `ul  1 p 4 91 ]
 [v vGenerateSinus@u32Offset u32Offset `ul  1 p 4 95 ]
-"180
+"181
 } 0
 "27 S:\XC8C\pic\sources\c99\common\sinf.c
 [v _sinf sinf `(f  1 e 4 0 ]
 {
-[u S2014 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2166 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "31
-[v sinf@ux ux `S2014  1 a 4 81 ]
+[v sinf@ux ux `S2166  1 a 4 81 ]
 "29
 [v sinf@y y `d  1 a 4 77 ]
 "32
@@ -734,9 +704,9 @@ SPI_CLKSEL_CLC4_OUT 12
 [v ___rem_pio2f@t t `f  1 a 4 51 ]
 "48
 [v ___rem_pio2f@fn fn `d  1 a 4 47 ]
-[u S2014 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2166 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "46
-[v ___rem_pio2f@ux ux `S2014  1 a 4 43 ]
+[v ___rem_pio2f@ux ux `S2166  1 a 4 43 ]
 "47
 [v ___rem_pio2f@ty ty `[1]d  1 a 4 34 ]
 "50
@@ -745,19 +715,19 @@ SPI_CLKSEL_CLC4_OUT 12
 [v ___rem_pio2f@x x `f  1 p 4 28 ]
 [v ___rem_pio2f@y y `*.39d  1 p 2 32 ]
 "45
-[v ___rem_pio2f@F526 F526 `S2014  1 s 4 F526 ]
+[v ___rem_pio2f@F526 F526 `S2166  1 s 4 F526 ]
 "102
 } 0
 "4 S:\XC8C\pic\sources\c99\common\fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
 {
-[u S2014 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2166 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v fabsf@u u `S2014  1 a 4 4 ]
+[v fabsf@u u `S2166  1 a 4 4 ]
 "4
 [v fabsf@x x `f  1 p 4 0 ]
 "5
-[v fabsf@F465 F465 `S2014  1 s 4 F465 ]
+[v fabsf@F465 F465 `S2166  1 s 4 F465 ]
 "9
 } 0
 "10 S:\XC8C\pic\sources\c99\common\xxtofl.c
@@ -812,17 +782,17 @@ SPI_CLKSEL_CLC4_OUT 12
 "8 S:\XC8C\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1712 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1961 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1717 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1720 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1712 1 fAsBytes 4 0 `S1717 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1720  1 a 4 33 ]
+[s S1966 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1969 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1961 1 fAsBytes 4 0 `S1966 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1969  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1788 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2037 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1791 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1788 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1791  1 a 2 37 ]
+[u S2040 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2037 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2040  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -870,165 +840,19 @@ SPI_CLKSEL_CLC4_OUT 12
 [v ___fldiv@a a `d  1 p 4 43 ]
 "185
 } 0
-"161 P:\Projekt\PIC\MagicMyc\main.c
+"163 P:\Projekt\PIC\MagicMyc\main.c
 [v _vGPIO_Set vGPIO_Set `(v  1 s 1 vGPIO_Set ]
 {
 [v vGPIO_Set@pu8GPIO_Port pu8GPIO_Port `C*.39VEuc  1 p 2 0 ]
 [v vGPIO_Set@u8GPIO_Pin u8GPIO_Pin `uc  1 p 1 2 ]
-"164
-} 0
 "166
+} 0
+"168
 [v _vGPIO_Reset vGPIO_Reset `(v  1 s 1 vGPIO_Reset ]
 {
 [v vGPIO_Reset@pu8GPIO_Port pu8GPIO_Port `C*.39VEuc  1 p 2 0 ]
 [v vGPIO_Reset@u8GPIO_Pin u8GPIO_Pin `uc  1 p 1 2 ]
-"169
-} 0
-"20 P:\Projekt\PIC\MagicMyc\SPI/SPI_Master.c
-[v _s8SPI_Master_Init s8SPI_Master_Init `(c  1 e 1 0 ]
-{
-[s S1168 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
-[v s8SPI_Master_Init@psSPI_Handler psSPI_Handler `C*.39VES1168  1 p 2 56 ]
-[s S1074 . 4 `E14071 1 eSPI_Mode 1 0 `E14056 1 eSPI_CLKSEL 1 1 `uc 1 u8SPI_Baud 1 2 `uc 1 bMSB_First 1 3 ]
-[v s8SPI_Master_Init@psConfig psConfig `C*.39CS1074  1 p 2 58 ]
-"68
-} 0
-"132
-[v _vSPI_Enable vSPI_Enable `(v  1 s 1 vSPI_Enable ]
-{
-[s S1168 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
-[v vSPI_Enable@psSPI_Handler psSPI_Handler `C*.39VES1168  1 p 2 0 ]
-"135
-} 0
-"137
-[v _vSPI_Disable vSPI_Disable `(v  1 s 1 vSPI_Disable ]
-{
-[s S1168 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
-[v vSPI_Disable@psSPI_Handler psSPI_Handler `C*.39VES1168  1 p 2 0 ]
-"140
-} 0
-"142
-[v _vSPI_ClearFIFOs vSPI_ClearFIFOs `(v  1 s 1 vSPI_ClearFIFOs ]
-{
-[s S1168 . 13 `VEuc 1 SPIxRXB 1 0 `VEuc 1 SPIxTXB 1 1 `VEus 1 SPIxTCNT 2 2 `VEuc 1 SPIxCON0 1 4 `VEuc 1 SPIxCON1 1 5 `VEuc 1 SPIxCON2 1 6 `VEuc 1 SPIxSTATUS 1 7 `VEuc 1 SPIxTWIDTH 1 8 `VEuc 1 SPIxBAUD 1 9 `VEuc 1 SPIxINTF 1 10 `VEuc 1 SPIxINTE 1 11 `VEuc 1 SPIxCLK 1 12 ]
-[v vSPI_ClearFIFOs@psSPI_Handler psSPI_Handler `C*.39VES1168  1 p 2 0 ]
-"145
-} 0
-"8 S:\XC8C\pic\sources\c99\common\assert.c
-[v ___assert_fail __assert_fail `(v  1 e 1 0 ]
-{
-[v ___assert_fail@expr expr `*.32Cuc  1 p 2 48 ]
-[v ___assert_fail@file file `*.32Cuc  1 p 2 50 ]
-[v ___assert_fail@line line `i  1 p 2 52 ]
-[v ___assert_fail@func func `*.32Cuc  1 p 2 54 ]
-"12
-} 0
-"5 S:\XC8C\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"8
-[v printf@ap ap `[1]*.39v  1 a 2 46 ]
-"5
-[v printf@fmt fmt `*.32Cuc  1 p 2 36 ]
-"13
-} 0
-"1817 S:\XC8C\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1820
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 34 ]
-[s S1917 _IO_FILE 0 ]
-"1817
-[v vfprintf@fp fp `*.39S1917  1 p 2 28 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 30 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 32 ]
-"1840
-} 0
-"1177
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-{
-"1669
-[v vfpfcnvrt@cp_1964 cp `*.35uc  1 a 2 18 ]
-[u S1930 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
-"1188
-[v vfpfcnvrt@convarg convarg `S1930  1 a 4 23 ]
-"1179
-[v vfpfcnvrt@cp cp `*.32uc  1 a 2 20 ]
-[v vfpfcnvrt@c c `uc  1 a 1 27 ]
-"1180
-[v vfpfcnvrt@done done `a  1 a 1 22 ]
-[s S1917 _IO_FILE 0 ]
-"1177
-[v vfpfcnvrt@fp fp `*.39S1917  1 p 2 10 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 12 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 14 ]
-"1814
-} 0
-"8 S:\XC8C\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 0 ]
-[u S1896 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1899 _IO_FILE 12 `S1896 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1899  1 p 2 2 ]
-"24
-} 0
-"7 S:\XC8C\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"1 S:\XC8C\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 6 ]
-"4
-} 0
-"7 S:\XC8C\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 S:\XC8C\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
-} 0
-"4 S:\XC8C\pic\sources\c99\common\abort.c
-[v _abort abort `(v  1 e 1 0 ]
-{
-"6
-} 0
-"8 S:\XC8C\pic\sources\c99\common\exit.c
-[v _exit exit `(v  1 e 1 0 ]
-{
-[v exit@code code `i  1 p 2 2 ]
-"13
-} 0
-"11 S:\XC8C\pic\sources\c99\common\atexit.c
-[v ___funcs_on_exit __funcs_on_exit `(v  1 e 1 0 ]
-{
-"18
-} 0
-"3 S:\XC8C\pic\sources\c99\common\_Exit.c
-[v __Exit _Exit `(v  1 e 1 0 ]
-{
-[v __Exit@ec ec `i  1 p 2 0 ]
-"6
+"171
 } 0
 "41 P:\Projekt\PIC\MagicMyc\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
